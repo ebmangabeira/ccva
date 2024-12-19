@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="PT">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>CCVA | Caldas da Rainha</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Ícones -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Tipografias -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
+    rel="stylesheet">
+
+  <!-- Ficheiros CSS de Fornecedores -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+  <!-- Ficheiros CSS Principais -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+    /* Estilo moderno para formulários */
+    .form-control-wrapper {
+      position: relative;
+      margin-bottom: 1rem;
+      width: 100%;
+    }
+
+    .custom-feature-item {
+      border: 1px solid #06BBCC;
+      box-shadow: none;
+      text-align: left; /* Alinha o conteúdo à esquerda */
+      padding: 1rem; /* Consistente padding */
+      /* Removido efeitos de hover */
+    }
+
+    .custom-feature-item label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-family: Raleway, sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: #05a5ab;
+    }
+
+    select.form-control,
+    input.form-control {
+      width: 100%;
+      box-sizing: border-box; /* Inclui padding e bordas na largura total */
+      padding: 8px 12px;
+      font-size: 14px;
+      color: #333;
+      border: none; /* Remove todas as bordas */
+      border-bottom: 2px solid #06BBCC; /* Adiciona apenas a borda inferior */
+      border-radius: 0; /* Remove border radius */
+      background-color: white;
+      transition: border-bottom 0.3s;
+      appearance: none; /* Remove a aparência padrão para melhor controle */
+      cursor: pointer;
+    }
+
+    select.form-control:focus,
+    input.form-control:focus {
+      outline: none;
+      border-bottom: 2px solid #e80368; /* Muda a cor da borda inferior no foco */
+    }
+
+    select.form-control option,
+    input.form-control option {
+      color: #333;
+    }
+
+    /* Seta para baixo apenas nos selects dentro de .select-wrapper */
+    .select-wrapper::after {
+      content: "\25BC"; /* Down arrow */
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 16px;
+      color: #06BBCC;
+      pointer-events: none;
+    }
+
+    /* Estilos para <select> e <input> desativados */
+    select.form-control:disabled,
+    input.form-control:disabled {
+      background-color: white; /* Mantém fundo branco */
+      color: #333; /* Mantém a cor do texto */
+      cursor: not-allowed;
+    }
+
+    /* Classe personalizada para os botões */
+    .btn-custom {
+      min-width: 100px; /* Define uma largura mínima */
+      max-width: 200px; /* Define uma largura máxima */
+      width: auto; /* Permite que o botão ajuste sua largura conforme o conteúdo */
+      margin-bottom: 10px; /* Adiciona apenas margem inferior */
+      display: inline-block; /* Permite que os botões fiquem lado a lado se necessário */
+    }
+
+    /* Ajuste para o input de pesquisa para garantir alinhamento */
+    .form-control-wrapper input.form-control {
+      cursor: text; /* Muda o cursor para texto */
+    }
+
+    /* Remove a margem superior do primeiro elemento para melhor espaçamento */
+    .custom-feature-item .form-control-wrapper:first-child {
+      margin-top: 0;
+    }
+
+    /* Opcional: Melhorar a responsividade dos botões */
+    @media (max-width: 576px) {
+      .btn-custom {
+        width: 100%;
+        max-width: none;
+      }
+    }
+
+    /* Remover Efeitos de Hover nas Bordas das Seções */
+    /* Comentando as regras de hover para .custom-feature-item */
+    /*
+    .custom-feature-item:hover {
+      box-shadow: none !important;
+      border-color: #06BBCC !important;
+    }
+    */
+
+    /* Estilo para mensagens de erro */
+    .search-prompt {
+      color: #e80368;      /* Define a cor do texto */
+      font-size: 12px;     /* Define o tamanho da fonte */
+    }
+  </style>
+</head>
+
+<body class="index-page">
+  <!-- Conteúdo original do site preservado -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img alt="Descriptive text" src="assets/img/VA2.png" alt="Logo" class="logo-img">
+        <h1 class="sitename ms-2">CCVA </h1>
+        <h5 class="h5-logo">Caldas da Rainha</h5>
+      </a>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html" class="active">Início</a></li>
+          <li><a href="#">Bem-vindos</a></li>
+          <li class="dropdown"><a href="#"><span>CCVA Igrejas</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#">Lisboa</a></li>
+              <li><a href="#">Moscavide</a></li>
+              <li><a href="#">Figueira da Fox</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Comunidade</span> <i
+                class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li class="dropdown"><a href="#"><span>Ministérios</span> <i
+                    class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Mulheres de Propósito</a></li>
+                  <li><a href="#">Homens de Propósito</a></li>
+                  <li><a href="#">Adolescentes Nova Geração</a></li>
+                  <li><a href="#">Super Igreja e Espaço Fixe</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Conexão Europa</a></li>
+              <li><a href="#">Espaço Cultural</a></li>
+              <li><a href="#">Apoio Solidário</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Estudo Bíblico</a></li>
+          <li><a href="#">Galeria</a></li>
+          <li><a href="#">Donativos</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="page-title dark-background" data-aos="fade">
+      <div class="heading">
+        <div class="container">
+          <div class="row d-flex justify-content-center text-center">
+            <div class="col-lg-8"></div>
+          </div>
+        </div>
+      </div>
+      <nav class="breadcrumbs">
+        <div class="container">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Starter Page</li>
+          </ol>
+        </div>
+      </nav>
+    </div>
+
+    <section id="custom-features" class="custom-features-section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Bíblia</h2>
+        <div><span>online</span></div>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row">
+          <!-- Sidebar -->
+          <div class="col-lg-4">
+            <!-- Novo Formulário: Bíblia Versão -->
+            <div class="custom-feature-item" style="border: 1px solid #06BBCC; box-shadow: none; margin-bottom: 1px;">
+              <h4 style="color: #05a5ab; font-family: Raleway, sans-serif; font-weight: 700; margin-bottom: 0.5rem;">
+                <i class="fas fa-bible" style="margin-right: 8px; vertical-align: middle;"></i> Bíblia Versão
+              </h4>
+              <div class="form-control-wrapper select-wrapper">
+                <select id="bibleVersion" class="form-control">
+                  <option value="">Selecione</option>
+                  <option value="almeidaRevisada">Almeida Revisada Imprensa Bíblica</option>
+                  <option value="almeidaCorrigida">Almeida Corrigida Fiel</option>
+                  <option value="novaVersaoInternacional">Nova Versão Internacional</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Formulário Existente: Livro, Capítulo e Versículos -->
+            <div class="custom-feature-item" style="border: 1px solid #06BBCC; box-shadow: none; margin-bottom: 1px;">
+              <label for="livro">
+                <i class="bi bi-book" style="font-size: 24px; color: #5578ff;"></i> Livro
+              </label>
+              <div class="form-control-wrapper select-wrapper">
+                <select id="livro" class="form-control" disabled>
+                  <option value="">Selecione</option>
+                  <!-- As opções serão preenchidas dinamicamente -->
+                </select>
+              </div>
+
+              <label for="capitulo">
+                <i class="bi bi-list-nested" style="font-size: 24px; color: #ffbb2c;"></i> Capítulo
+              </label>
+              <div class="form-control-wrapper select-wrapper">
+                <select id="capitulo" class="form-control" disabled>
+                  <option value="">Selecione</option>
+                  <!-- As opções serão preenchidas dinamicamente -->
+                </select>
+              </div>
+
+              <label for="versiculoInicio">
+                <i class="bi bi-arrow-up" style="font-size: 16px; color: #e80368;"></i> Versículo de
+              </label>
+              <div class="form-control-wrapper select-wrapper">
+                <select id="versiculoInicio" class="form-control" disabled>
+                  <option value="">Selecione</option>
+                  <!-- As opções serão preenchidas dinamicamente -->
+                </select>
+              </div>
+
+              <label for="versiculoFim">
+                <i class="bi bi-arrow-down" style="font-size: 16px; color: #e80368;"></i> Versículo até
+              </label>
+              <div class="form-control-wrapper select-wrapper">
+                <select id="versiculoFim" class="form-control" disabled>
+                  <option value="">Selecione</option>
+                  <!-- As opções serão preenchidas dinamicamente -->
+                </select>
+              </div>
+
+              <button id="btnIntervalo" class="btn btn-sm btn-custom" style="background-color: #06BBCC; color: white;" disabled onclick="lerVersiculosIntervalo()">
+                Buscar
+              </button>
+
+              <div class="bible-section-title mt-3"></div>
+              <label for="palavra">
+                <i class="bi bi-search" style="font-size: 16px; color: #05a5ab;"></i> Pesquisa
+              </label>
+              <div class="form-control-wrapper">
+                <input type="text" id="palavra" class="form-control" placeholder="Ex: amor, fé, salvação...">
+              </div>
+              <button id="btnBuscarPalavra" class="btn btn-sm btn-custom" style="background-color: #06BBCC; color: white;" onclick="buscarPorPalavra()">
+                Pesquisar
+              </button>
+              <!-- Mensagem de erro -->
+              <div id="mensagemErro" class="search-prompt" style="display: none;"></div>
+            </div>
+          </div>
+
+          <!-- Main Content -->
+          <div class="col-lg-8">
+            <div class="custom-feature-item" style="border: 1px solid #06BBCC; box-shadow: none;">
+              <h3 id="tituloCapitulo" class="text-center mb-4" style="font-size: 16px; color: #05a5ab;">Leitura</h3>
+              <div id="versiculos" class="bible-verses-container"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">Bootslander</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>A108 Adam Street</p>
+            <p>New York, NY 535022</p>
+            <p class="mt-3"><strong>Telefone:</strong> <span>+1 5589 55488 55</span></p>
+            <p><strong>Email:</strong> <span>info@example.com</span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Links Úteis</h4>
+          <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Sobre nós</a></li>
+            <li><a href="#">Serviços</a></li>
+            <li><a href="#">Termos de Serviço</a></li>
+            <li><a href="#">Política de Privacidade</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Os Nossos Serviços</h4>
+          <ul>
+            <li><a href="#">Web Design</a></li>
+            <li><a href="#">Desenvolvimento Web</a></li>
+            <li><a href="#">Gestão de Produto</a></li>
+            <li><a href="#">Marketing</a></li>
+            <li><a href="#">Design Gráfico</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12 footer-newsletter">
+          <h4>A Nossa Newsletter</h4>
+          <p>Subscreve a nossa newsletter e recebe as últimas novidades sobre os nossos produtos e serviços!</p>
+          <form action="forms/newsletter.php" method="post" class="php-email-form">
+            <div class="newsletter-form">
+              <input type="email" name="email" required>
+              <input type="submit" value="Subscrever">
+            </div>
+            <div class="loading">A carregar</div>
+            <div class="error-message"></div>
+            <div class="sent-message">O teu pedido de subscrição foi enviado. Obrigado!</div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Direitos de Autor</span> <strong class="px-1 sitename">CCVA Caldas da Rainha</strong> <span>Todos os Direitos Reservados</span></p>
+      <div class="credits">
+        Concebido por <a class="designed" href="#">Emerson Botelho</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botão de voltar ao topo -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Ficheiros JS de Fornecedores -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Ficheiros JS Principais -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/core.min.js"></script>
+  <script src="assets/js/script.js"></script>
+  <script>
+    // Mapeamento das versões da Bíblia para seus respectivos URLs JSON
+    const versionJsonUrls = {
+      "almeidaRevisada": "https://raw.githubusercontent.com/ebmangabeira/biblia-pt/refs/heads/main/pt_aa.json",
+      "almeidaCorrigida": "https://raw.githubusercontent.com/ebmangabeira/biblia-pt-acf/main/pt_acf.json",
+      "novaVersaoInternacional": "https://raw.githubusercontent.com/ebmangabeira/biblia-pt/refs/heads/main/pt_nvi.json"
+    };
+
+    // Referências aos elementos do DOM
+    const bibleVersionSelect = document.getElementById("bibleVersion");
+    const livroSelect = document.getElementById("livro");
+    const capituloSelect = document.getElementById("capitulo");
+    const versiculoInicioSelect = document.getElementById("versiculoInicio");
+    const versiculoFimSelect = document.getElementById("versiculoFim");
+    const btnBuscar = document.getElementById("btnIntervalo");
+    const versiculosContainer = document.getElementById("versiculos");
+    const palavraInput = document.getElementById("palavra");
+    const btnBuscarPalavra = document.getElementById("btnBuscarPalavra");
+    const mensagemErro = document.getElementById("mensagemErro");
+
+    let bibleData = {}; // Dados da Bíblia
+    let livroAtual = {}; // Livro atualmente selecionado
+    let currentVersion = ""; // Versão atual selecionada
+
+    // Função para carregar os dados da Bíblia com base na versão
+    async function carregarBiblia() {
+      if (!currentVersion || !versionJsonUrls[currentVersion]) {
+        console.error("Versão da Bíblia não selecionada ou inválida.");
+        return;
+      }
+
+      const jsonUrl = versionJsonUrls[currentVersion];
+
+      try {
+        const response = await fetch(jsonUrl);
+        if (!response.ok) {
+          throw new Error(`Erro ao carregar os dados da versão ${currentVersion}: ${response.statusText}`);
+        }
+        bibleData = await response.json();
+
+        // Limpar o dropdown de livros antes de preencher
+        livroSelect.innerHTML = '<option value="">Selecione</option>';
+        capituloSelect.innerHTML = '<option value="">Selecione</option>';
+        versiculoInicioSelect.innerHTML = '<option value="">Selecione</option>';
+        versiculoFimSelect.innerHTML = '<option value="">Selecione</option>';
+        versiculosContainer.innerHTML = "";
+        mensagemErro.style.display = "none";
+
+        // Preencher o dropdown de livros
+        Object.keys(bibleData).forEach((key) => {
+          const option = document.createElement("option");
+          option.value = key; // Índice do livro
+          option.textContent = bibleData[key].name; // Nome do livro
+          livroSelect.appendChild(option);
+        });
+
+        // Habilitar o seletor de livros
+        livroSelect.disabled = false;
+        capituloSelect.disabled = true;
+        versiculoInicioSelect.disabled = true;
+        versiculoFimSelect.disabled = true;
+        btnBuscar.disabled = true;
+
+      } catch (error) {
+        console.error("Erro ao carregar os dados da Bíblia:", error);
+        alert("Não foi possível carregar os dados da Bíblia. Por favor, tente novamente mais tarde.");
+      }
+    }
+
+    // Evento para selecionar a versão da Bíblia
+    bibleVersionSelect.addEventListener("change", () => {
+      currentVersion = bibleVersionSelect.value;
+      if (currentVersion) {
+        carregarBiblia();
+      } else {
+        // Se nenhuma versão for selecionada, desabilitar os demais seletores
+        livroSelect.innerHTML = '<option value="">Selecione</option>';
+        capituloSelect.innerHTML = '<option value="">Selecione</option>';
+        versiculoInicioSelect.innerHTML = '<option value="">Selecione</option>';
+        versiculoFimSelect.innerHTML = '<option value="">Selecione</option>';
+        versiculoInicioSelect.disabled = true;
+        versiculoFimSelect.disabled = true;
+        capituloSelect.disabled = true;
+        livroSelect.disabled = true;
+        btnBuscar.disabled = true;
+        versiculosContainer.innerHTML = "";
+        mensagemErro.style.display = "none";
+      }
+    });
+
+    // Carregar capítulos ao selecionar um livro
+    livroSelect.addEventListener("change", () => {
+      const livroIndex = livroSelect.value;
+      livroAtual = bibleData[livroIndex];
+
+      capituloSelect.innerHTML = '<option value="">Selecione</option>';
+      versiculoInicioSelect.innerHTML = '<option value="">Selecione</option>';
+      versiculoFimSelect.innerHTML = '<option value="">Selecione</option>';
+      versiculosContainer.innerHTML = "";
+      mensagemErro.style.display = "none";
+
+      if (livroAtual && livroAtual.chapters) {
+        Object.keys(livroAtual.chapters).forEach((key, index) => {
+          const option = document.createElement("option");
+          option.value = key;
+          option.textContent = `Capítulo ${index + 1}`;
+          capituloSelect.appendChild(option);
+        });
+        capituloSelect.disabled = false;
+      } else {
+        capituloSelect.disabled = true;
+        versiculoInicioSelect.disabled = true;
+        versiculoFimSelect.disabled = true;
+        btnBuscar.disabled = true;
+      }
+    });
+
+    // Carregar versículos ao selecionar um capítulo
+    capituloSelect.addEventListener("change", () => {
+      const capituloIndex = capituloSelect.value;
+      const versiculos = livroAtual.chapters[capituloIndex];
+
+      versiculoInicioSelect.innerHTML = '<option value="">Selecione</option>';
+      versiculoFimSelect.innerHTML = '<option value="">Selecione</option>';
+      versiculosContainer.innerHTML = "";
+      mensagemErro.style.display = "none";
+
+      if (versiculos) {
+        Object.keys(versiculos).forEach((key) => {
+          const numeroVersiculo = parseInt(key) + 1; // Ajuste para exibição a partir de 1
+
+          const optionInicio = document.createElement("option");
+          const optionFim = document.createElement("option");
+
+          optionInicio.value = key; // Valor original da chave
+          optionInicio.textContent = numeroVersiculo; // Exibe como 1, 2, 3,...
+
+          optionFim.value = key;
+          optionFim.textContent = numeroVersiculo;
+
+          versiculoInicioSelect.appendChild(optionInicio);
+          versiculoFimSelect.appendChild(optionFim);
+        });
+
+        versiculoInicioSelect.disabled = false;
+        versiculoFimSelect.disabled = false;
+
+        btnBuscar.disabled = false;
+      } else {
+        versiculoInicioSelect.disabled = true;
+        versiculoFimSelect.disabled = true;
+        btnBuscar.disabled = true;
+      }
+    });
+
+    // Exibir versículos no intervalo ou capítulo completo
+    function lerVersiculosIntervalo() {
+      const capituloIndex = capituloSelect.value;
+      const inicioKey = versiculoInicioSelect.value;
+      const fimKey = versiculoFimSelect.value;
+
+      if (!capituloIndex) {
+        alert("Por favor, selecione um capítulo.");
+        return;
+      }
+
+      const versiculos = livroAtual.chapters[capituloIndex];
+      versiculosContainer.innerHTML = "";
+      mensagemErro.style.display = "none";
+
+      if (!isNaN(parseInt(inicioKey)) && isNaN(parseInt(fimKey))) {
+        // Apenas um versículo
+        if (versiculos[inicioKey] !== undefined) {
+          const inicioNum = parseInt(inicioKey) + 1; // Ajuste para exibição
+          const p = document.createElement("p");
+          p.textContent = `${inicioNum}: ${versiculos[inicioKey]}`;
+          versiculosContainer.appendChild(p);
+        } else {
+          versiculosContainer.innerHTML = `<p class="text-danger">Versículo ${parseInt(inicioKey) + 1} não encontrado.</p>`;
+        }
+      } else if (isNaN(parseInt(inicioKey)) || isNaN(parseInt(fimKey))) {
+        // Exibir todo o capítulo
+        Object.keys(versiculos).forEach((key) => {
+          const numeroVersiculo = parseInt(key) + 1; // Ajuste para exibição
+          const p = document.createElement("p");
+          p.textContent = `${numeroVersiculo}: ${versiculos[key]}`;
+          versiculosContainer.appendChild(p);
+        });
+      } else {
+        // Exibir intervalo de versículos
+        const inicioNum = parseInt(inicioKey) + 1;
+        const fimNum = parseInt(fimKey) + 1;
+
+        if (inicioNum > fimNum) {
+          alert("O versículo de início não pode ser maior que o versículo de fim.");
+          return;
+        }
+
+        let encontrou = false;
+
+        Object.keys(versiculos).forEach((key) => {
+          const numeroVersiculo = parseInt(key) + 1;
+          if (numeroVersiculo >= inicioNum && numeroVersiculo <= fimNum) {
+            encontrou = true;
+            const p = document.createElement("p");
+            p.textContent = `${numeroVersiculo}: ${versiculos[key]}`;
+            versiculosContainer.appendChild(p);
+          }
+        });
+
+        if (!encontrou) {
+          versiculosContainer.innerHTML = `<p class="text-danger">Nenhum versículo encontrado no intervalo selecionado.</p>`;
+        }
+      }
+    }
+
+    // Buscar versículos por palavra
+    function buscarPorPalavra() {
+      const palavra = palavraInput.value.trim().toLowerCase();
+      versiculosContainer.innerHTML = "";
+      mensagemErro.style.display = "none";
+
+      if (!palavra) {
+        mensagemErro.textContent = '"Digite uma palavra para pesquisar"';
+        mensagemErro.style.display = "block";
+        return;
+      }
+
+      let encontrou = false;
+
+      Object.keys(bibleData).forEach((livroKey) => {
+        const livro = bibleData[livroKey];
+        const livroNome = livro.name;
+
+        Object.keys(livro.chapters).forEach((capituloKey) => {
+          const capitulo = livro.chapters[capituloKey];
+
+          Object.keys(capitulo).forEach((versiculoKey) => {
+            const texto = capitulo[versiculoKey].toLowerCase();
+            if (texto.includes(palavra)) {
+              encontrou = true;
+              const numeroVersiculo = parseInt(versiculoKey) + 1; // Ajuste para exibição
+              const p = document.createElement("p");
+              p.innerHTML = `<strong>${livroNome} ${parseInt(capituloKey) + 1}:${numeroVersiculo}</strong> - ${capitulo[versiculoKey]}`;
+              versiculosContainer.appendChild(p);
+            }
+          });
+        });
+      });
+
+      if (!encontrou) {
+        versiculosContainer.innerHTML = `<p class="text-danger">Nenhum versículo encontrado com a palavra "${palavra}".</p>`;
+      }
+    }
+
+    // Inicializar a aplicação
+    // Não chamar carregarBiblia() aqui para aguardar a seleção da versão
+  </script>
+</body>
+
+</html>
