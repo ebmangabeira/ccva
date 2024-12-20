@@ -145,6 +145,46 @@
         font-size: 12px;     /* Define o tamanho da fonte */
       }
     </style>
+    <!-- Banner de Cookies -->
+    <div class="cookie-banner" id="cookieBanner">
+      <div class="cookie-card">
+        <div class="cookie-header">
+          <i class="fas fa-cookie-bite"></i>
+          <span>Consentimento de Cookies</span>
+        </div>
+        <p class="cookie-text">
+          Este site utiliza cookies para melhorar a sua experiência. Saiba mais na nossa
+          <a href="#" id="cookiePolicyLink">Política de Cookies e Privacidade</a>.
+        </p>
+        <div class="cookie-buttons">
+          <button class="cookie-btn btn-accept" id="acceptCookies">Aceitar</button>
+          <button class="cookie-btn btn-decline" id="declineCookies">Recusar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="cookieModal">
+      <div class="modal-content">
+        <button class="modal-close" id="closeModal">&times;</button>
+        <div class="modal-header">Política de Cookies e Privacidade</div>
+        <div class="modal-body">
+          <h6>O que são Cookies?</h6>
+          <p>Os cookies são pequenos ficheiros que armazenam informações sobre a sua navegação e permitem:</p>
+          <ul>
+            <li>Melhorar a funcionalidade do site;</li>
+            <li>Oferecer conteúdos personalizados;</li>
+            <li>Armazenar preferências do utilizador;</li>
+            <li>Fornecer estatísticas para melhoria contínua.</li>
+          </ul>
+          <h6>Política de Privacidade</h6>
+          <p>
+            Valorizamos a sua privacidade e garantimos que os seus dados são tratados de forma ética e segura.
+            Para mais informações, consulte a nossa <strong>Política de Privacidade</strong>.
+          </p>
+        </div>
+      </div>
+    </div>
   </head>
 
   <body class="index-page">
