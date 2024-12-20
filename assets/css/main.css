@@ -69,13 +69,13 @@ body {
 }
 
 a {
-  color: var(--accent-color);
+  color: #c7fdff;
   text-decoration: none;
   transition: 0.3s;
 }
 
 a:hover {
-  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+  color: white;
   text-decoration: none;
 }
 
@@ -311,7 +311,7 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  --background-color: rgba(255, 255, 255, 0);
+  --background-color:#05a5ab;
   --default-color: #ffffff;
   --heading-color: #ffffff;
   color: var(--default-color);
@@ -705,7 +705,7 @@ h6 {
 }
 
 .footer .footer-links ul a:hover {
-  color: var(--accent-color);
+  color: white;
 }
 
 .footer .footer-contact p {
@@ -900,7 +900,7 @@ h6 {
 }
 
 .page-title .heading {
-  padding: 160px 0 80px 0;
+  padding: 13px 0 80px 0;
   border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
@@ -1025,7 +1025,6 @@ section,
 
 .hero:before {
   content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 10%);
   position: absolute;
   inset: 0;
   z-index: 2;
@@ -1103,6 +1102,37 @@ section,
 .hero .animated {
   animation: up-down 2s ease-in-out infinite alternate-reverse both;
 }
+/* Estilo personalizado para o botão "Culto Online" */
+.btn-culto-online {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff; /* Letras brancas */
+  background-color: #06BBCC; /* Cor de fundo */
+  border: none;
+  border-radius: 50px; /* Cantos arredondados */
+  text-decoration: none;
+  transition: background-color 0.3s; /* Transição suave apenas na cor */
+}
+
+.btn-culto-online i {
+  margin-right: 8px; /* Espaço entre o ícone e o texto */
+  font-size: 20px; /* Tamanho do ícone */
+}
+
+.btn-culto-online:hover {
+  background-color: #0499A5; /* Cor mais escura ao passar o mouse */
+  color: #fff; /* Garante que o texto continue branco */
+}
+
+.btn-culto-online:active {
+  background-color: #037C85; /* Cor ao clicar */
+}
+
 
 @media (max-width: 640px) {
   .hero h1 {
@@ -1332,7 +1362,7 @@ section,
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px; /* Tamanho da fonte reduzido */
+  font-size: 14px; /* Tamanho da fonte reduzido */
   font-weight: bold;
   text-decoration: none;
   color: #06BBCC; /* Azul padrão */

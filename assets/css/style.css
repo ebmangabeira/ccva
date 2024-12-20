@@ -1,6 +1,7 @@
+
 .video-section {
 	position: relative;
-	padding-top: 0; /* Remove padding extra no topo para desktops */
+	padding-top: 100px; /* Remove padding extra no topo para desktops */
   }
   
   /* Responsividade para dispositivos menores */
@@ -386,4 +387,4 @@ box-shadow: none; /* Remove sombra extra que pode vir do Bootstrap */
 		margin-top: 60px;
 	}
 }
-
+        
