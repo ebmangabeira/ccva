@@ -36,6 +36,19 @@ img {
 .img-responsive {
 	width: 100%;
 }
+.custom-border-radius {
+	max-width: 80%; /* Ajusta o tamanho da imagem */
+	height: auto; /* Mantém a proporção da imagem */
+	border-radius: 2px; /* Aplica o border-radius de 2px */
+  }
+  
+  @media (max-width: 768px) {
+	.custom-border-radius {
+	  max-width: 90%; /* Ajusta o tamanho da imagem em telas menores */
+	}
+  }
+  
+  
 
 * + .figure-1 {
 	margin-top: 30px;
