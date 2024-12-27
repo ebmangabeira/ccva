@@ -37,7 +37,7 @@ img {
 	width: 100%;
 }
 .custom-border-radius {
-	max-width: 80%; /* Ajusta o tamanho da imagem */
+	max-width: 70%; /* Ajusta o tamanho da imagem */
 	height: auto; /* Mantém a proporção da imagem */
 	border-radius: 2px; /* Aplica o border-radius de 2px */
   }
