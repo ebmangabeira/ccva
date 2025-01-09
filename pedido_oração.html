@@ -30,21 +30,6 @@
     <!-- Ficheiros CSS Principais -->
     <link href="assets/css/main.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
-    <style>
-      .btn-custom {
-        color: var(--contrast-color);
-        background: var(--accent-color);
-        border: 0;
-        padding: 10px 30px;
-        transition: 0.4s;
-        border-radius: 50px;
-        cursor: pointer;
-      }
-    
-      .btn-custom:hover {
-        filter: brightness(1.1);
-      }
-    </style>
     
     <!-- Banner de Cookies -->
     <div class="cookie-banner" id="cookieBanner">
@@ -148,7 +133,7 @@
           <div class="container">
             <ol>
               <li><a href="index.html">Início</a></li>
-              <li class="current">Bem-Vindos</li>
+              <li class="current">Mensagem</li>
             </ol>
           </div>
         </nav>
@@ -160,48 +145,74 @@
 
     <!-- Título da Seção -->
     <div class="container section-title" data-aos="fade-up">
-      <h2>Contacto</h2>
-      <div><span>informações</span> <span class="description-title"></span></div>
+      <h2>Mensagem</h2>
+      <div><span>Fale Connosco</span> <span class="description-title"></span></div>
     </div><!-- Fim do Título da Seção -->
   
     <div class="container" data-aos="fade" data-aos-delay="100">
   
       <div class="row gy-4">
   
+        
+        
         <div class="col-lg-4">
           <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-            <i class="bi bi-geo-alt flex-shrink-0"></i>
-            <div>
-              <h3>Morada</h3>
-              <p>A108 Rua Adam, Nova Iorque, NY 535022</p>
-            </div>
-          </div><!-- Fim do Item de Informação -->
-  
-          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-            <i class="bi bi-telephone flex-shrink-0"></i>
-            <div>
-              <h3>Ligue-nos</h3>
-              <p>+1 5589 55488 55</p>
-            </div>
-          </div><!-- Fim do Item de Informação -->
-  
-          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
             <i class="bi bi-envelope flex-shrink-0"></i>
             <div>
-              <h3>Envie-nos um Email</h3>
-              <p>info@exemplo.com</p>
+              <h3>Enviar Mensagem</h3>
+              <p>Entre em contacto connosco para esclarecer dúvidas, partilhar ideias ou procurar apoio. Estamos aqui para ajudar!</p>
             </div>
           </div><!-- Fim do Item de Informação -->
-  
+                
+          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+            <i class="fas fa-praying-hands flex-shrink-0"></i>
+            <div>
+              <h3>Pedido de Oração</h3>
+              <p>Envie-nos o seu pedido de oração e permita-nos interceder por si com fé e amor.</p>
+            </div>
+          </div><!-- Fim do Item de Informação -->
         </div>
+        
+        
+        
+        
+        
   
         <div class="col-lg-8">
-          <div id="leafletMap" style="width:100%;height:400px;" data-aos="fade-up" data-aos-delay="200"></div>
-          <div class="col-md-12 text-center mt-4">
-              <button onclick="openGPS()" class="btn-custom">Abrir no GPS</button>
-          </div>
-      </div>
-        
+            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+              <div class="row gy-4">
+          
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="O seu nome" required="">
+                </div>
+          
+                <div class="col-md-6">
+                  <input type="email" class="form-control" name="email" placeholder="O seu email" required="">
+                </div>
+            
+                <div class="col-md-6">
+                  <input type="tel" class="form-control" name="phone" placeholder="O seu telefone" required="" pattern="[0-9]{9}" maxlength="9">
+                </div>
+          
+                <div class="col-md-6">
+                  <input type="text" class="form-control" name="subject" placeholder="Assunto" required="">
+                </div>
+          
+                <div class="col-md-12">
+                  <textarea class="form-control" name="message" rows="6" placeholder="Mensagem" required=""></textarea>
+                </div>
+          
+                <div class="col-md-12 text-center">
+                  <div class="loading">A carregar</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">A sua mensagem foi enviada. Obrigado!</div>
+          
+                  <button type="submit">Enviar</button>
+                </div>
+          
+              </div>
+            </form>
+          </div><!-- Fim do Formulário de Contacto -->
           
   
       </div>
@@ -309,36 +320,6 @@
     <script src="assets/js/main.js"></script>
     <script src="assets/js/core.min.js"></script>
     <script src="assets/js/script.js"></script>
-    <!-- Leaflet CSS -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-
-<!-- Leaflet CSS -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-
-<!-- Leaflet JS -->
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
-<script>
-    // Inicializar o mapa com o Leaflet sem atribuição
-    var map = L.map('leafletMap', {
-        attributionControl: false // Remove o texto de atribuição
-    }).setView([39.4033, -9.1348], 14); // Coordenadas de exemplo (Caldas da Rainha)
-
-    // Adicionar tiles do OpenStreetMap
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19
-    }).addTo(map);
-
-    // Adicionar um marcador ao mapa
-    var marker = L.marker([39.4033, -9.1348]).addTo(map); // Coordenadas de exemplo
-
-    // Função para abrir o GPS
-    function openGPS() {
-        var lat = 39.4033; // Latitude
-        var lng = -9.1348; // Longitude
-        window.open(`https://www.google.com/maps?q=${lat},${lng}`, '_blank');
-    }
-</script>
 
   </body>
 
