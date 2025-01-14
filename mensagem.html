@@ -106,7 +106,7 @@
             <li><a href="#">Estudo Bíblico</a></li>
             <li><a href="#">Galeria</a></li>
             <li><a href="pedido_oração.html">Donativos</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
@@ -127,7 +127,7 @@
           <div class="container">
             <ol>
               <li><a href="index.html">Início</a></li>
-              <li class="current">Contacto</li>
+              <li class="current">Mensagem</li>
             </ol>
           </div>
         </nav>
@@ -139,48 +139,87 @@
 
     <!-- Título da Seção -->
     <div class="container section-title" data-aos="fade-up">
-      <h2>Contacto</h2>
-      <div><span>Onde Estamos</span> <span class="description-title"></span></div>
+      <h2>Mensagem</h2>
+      <div><span>Fale Connosco</span> <span class="description-title"></span></div>
     </div><!-- Fim do Título da Seção -->
   
     <div class="container" data-aos="fade" data-aos-delay="100">
   
       <div class="row gy-4">
   
+        
+        
         <div class="col-lg-4">
           <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-            <i class="bi bi-geo-alt flex-shrink-0"></i>
-            <div>
-              <h3>Morada</h3>
-              <p>Rua Sebastião de Lima 37A,<br>  Caldas da Rainha, 2500-277</p>
-            </div>
-          </div><!-- Fim do Item de Informação -->
-  
-          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-            <i class="bi bi-telephone flex-shrink-0"></i>
-            <div>
-              <h3>Ligue-nos</h3>
-              <p>+351 912 061 291</p>
-            </div>
-          </div><!-- Fim do Item de Informação -->
-  
-          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400" style="padding-bottom: 60px;">
             <i class="bi bi-envelope flex-shrink-0"></i>
             <div>
-              <h3>Envie-nos um Email</h3>
-              <p>ccvacaldasdarainha@gmail.com</p>
+              <h3>Enviar Mensagem</h3>
+              <p>Entre em contacto connosco para esclarecer dúvidas, partilhar ideias ou procurar apoio. Estamos aqui para ajudar!</p>
             </div>
           </div><!-- Fim do Item de Informação -->
-  
+                
+          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300" style="padding-bottom: 60px;">
+            <i class="fas fa-praying-hands flex-shrink-0"></i>
+            <div>
+              <h3>Pedido de Oração</h3>
+              <p>Envie-nos o seu pedido de oração e permita-nos interceder por si com fé e amor.</p>
+            </div>
+          </div><!-- Fim do Item de Informação -->
         </div>
-  
-        <div class="col-lg-8">
-          <div id="leafletMap" style="width:100%;height:400px; margin-top: -24px;" data-aos="fade-up" data-aos-delay="200"></div>
-          <div class="col-md-12 text-center mt-4">
-              <button onclick="openGPS()" class="btn-custom">Abrir no GPS</button>
-          </div>
-      </div>
         
+        
+        
+        
+        
+  
+        <div class="col-lg-8" >
+          <form id="contact-form" class="php-email-form" data-aos="fade-up" data-aos-delay="200" style="margin-top: -48px;">
+              <div class="row gy-4">
+      
+                  <div class="col-md-6">
+                      <input type="text" name="name" class="form-control" placeholder="O seu nome" required>
+                  </div>
+      
+                  <div class="col-md-6">
+                      <input type="email" class="form-control" name="email" placeholder="O seu email" required>
+                  </div>
+      
+                  <div class="col-md-6">
+                      <input type="tel" class="form-control" name="phone" placeholder="O seu telefone" required pattern="[0-9]{9}" maxlength="9">
+                  </div>
+      
+                  <div class="col-md-6">
+                      <input type="text" class="form-control" name="subject" placeholder="Assunto" required>
+                  </div>
+      
+                  <div class="col-md-12">
+                      <textarea class="form-control" name="message" rows="6" placeholder="Mensagem" required></textarea>
+                  </div>
+      
+                  
+    <div class="col-md-12">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="privacy-checkbox" required>
+            <label class="form-check-label" for="privacy-checkbox">
+                Estou ciente de que os meus dados de informação não serão divulgados nem informados e que tudo o que for enviado pelo formulário estará seguro pela 
+                <a href="#" id="open-privacy-modal">política de privacidade.</a>
+            </label>
+        </div>
+        <div id="privacy-message" class="text-danger" style="display: none;">Por favor, aceite a política de privacidade.</div>
+    </div>
+    <div class="col-md-12 text-center">
+    
+                      <div class="loading" style="display: none;">A carregar...</div>
+                      <div class="error-message"></div>
+                      <div class="sent-message">A sua mensagem foi enviada. Estaremos a orar por si!</div>
+      
+                      <button type="submit">Enviar</button>
+                  </div>
+      
+              </div>
+          </form>
+      </div>
+      
           
   
       </div>
@@ -191,6 +230,8 @@
   
 
     </main>
+    <!-- Modal de Política de Privacidade -->
+  
 
     <footer id="footer" class="footer dark-background">
 
@@ -284,37 +325,129 @@
     <script src="assets/js/main.js"></script>
     <script src="assets/js/core.min.js"></script>
     <script src="assets/js/script.js"></script>
-    <!-- Leaflet CSS -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-
-<!-- Leaflet CSS -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-
-<!-- Leaflet JS -->
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+      document.getElementById('open-form-privacy-modal').addEventListener('click', function (event) {
+        event.preventDefault();
+        document.getElementById('form-privacy-modal').style.display = 'block';
+      });
+      document.getElementById('close-form-privacy-modal').addEventListener('click', function () {
+        document.getElementById('form-privacy-modal').style.display = 'none';
+      });
+      document.getElementById('close-modal-button').addEventListener('click', function () {
+        document.getElementById('form-privacy-modal').style.display = 'none';
+      });
+      document.getElementById('contact-form').addEventListener('submit', function (event) {
+        if (!document.getElementById('privacy-checkbox').checked) {
+          event.preventDefault();
+          document.getElementById('privacy-message').style.display = 'block';
+        } else {
+          document.getElementById('privacy-message').style.display = 'none';
+        }
+      });
+    </script>
 <script>
-    // Inicializar o mapa com o Leaflet sem atribuição
-    var map = L.map('leafletMap', {
-        attributionControl: false // Remove o texto de atribuição
-    }).setView([39.4033, -9.1348], 14); // Coordenadas de exemplo (Caldas da Rainha)
+    // Inicializar EmailJS
+    emailjs.init('4OrjsEHJulaC1VmSN'); // Substitua pelo seu Public Key
 
-    // Adicionar tiles do OpenStreetMap
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19
-    }).addTo(map);
+    // Manipular envio do formulário
+    document.getElementById('contact-form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evita o comportamento padrão do formulário
 
-    // Adicionar um marcador ao mapa
-    var marker = L.marker([39.4033, -9.1348]).addTo(map); // Coordenadas de exemplo
+        // Mostrar mensagem de carregamento
+        document.querySelector('.loading').style.display = 'block';
+        document.querySelector('.error-message').style.display = 'none';
+        document.querySelector('.sent-message').style.display = 'none';
 
-    // Função para abrir o GPS
-    function openGPS() {
-        var lat = 39.4033; // Latitude
-        var lng = -9.1348; // Longitude
-        window.open(`https://www.google.com/maps?q=${lat},${lng}`, '_blank');
-    }
+        // Enviar o formulário
+        emailjs.sendForm('teste', 'template_tbgi2yq', this)
+            .then(function () {
+                // Sucesso
+                document.querySelector('.loading').style.display = 'none';
+                document.querySelector('.sent-message').style.display = 'block';
+            }, function (error) {
+                // Erro
+                document.querySelector('.loading').style.display = 'none';
+                document.querySelector('.error-message').innerHTML = 'Erro: ' + JSON.stringify(error);
+                document.querySelector('.error-message').style.display = 'block';
+                console.error('EmailJS Error:', error); // Log detalhado no console
+            });
+    });
 </script>
 
-  </body>
+
+  
+<div id="privacy-modal" class="modal" style="display:none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Política de Privacidade</h5>
+                
+            </div>
+            <div class="modal-body">
+                <h2>Política de Privacidade</h2>
+                <p>
+                    Os dados fornecidos através deste formulário são protegidos pela liderança da Igreja CCVA - Vida Abundante Caldas da Rainha. Garantimos que as suas informações não serão divulgadas ou partilhadas com terceiros. Utilizamos medidas de segurança adequadas para proteger os seus dados contra acesso não autorizado, alteração ou destruição.
+                </p>
+                <p>
+                    A sua privacidade é importante para nós e estamos comprometidos em salvaguardar as suas informações pessoais. Para mais detalhes sobre como tratamos os seus dados, por favor, entre em contacto connosco.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="close-privacy-modal" class="bfechar">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    document.getElementById('open-privacy-modal').addEventListener('click', function(event) {
+        event.preventDefault();
+        document.getElementById('privacy-modal').style.display = 'block';
+    });
+    document.getElementById('close-privacy-modal').addEventListener('click', function() {
+        document.getElementById('privacy-modal').style.display = 'none';
+    });
+    document.getElementById('close-privacy-modal-button').addEventListener('click', function() {
+        document.getElementById('privacy-modal').style.display = 'none';
+    });
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        if (!document.getElementById('privacy-checkbox').checked) {
+            event.preventDefault();
+            document.getElementById('privacy-message').style.display = 'block';
+        } else {
+            document.getElementById('privacy-message').style.display = 'none';
+        }
+    });
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contact-form');
+
+    form.addEventListener('submit', function(event) {
+        let formValid = true;
+
+        // Loop through each required field and validate
+        form.querySelectorAll('[required]').forEach(field => {
+            if (!field.value.trim()) {
+                formValid = false;
+                field.setCustomValidity('Por favor, preencha este campo.');
+                field.reportValidity();
+            } else {
+                field.setCustomValidity(''); // Reset the validity message
+            }
+        });
+
+        if (!formValid) {
+            event.preventDefault(); // Prevent form submission if invalid
+        }
+    });
+});
+</script>
+
+</body>
 
 </html>
