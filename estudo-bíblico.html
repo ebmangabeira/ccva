@@ -1,316 +1,531 @@
 <!DOCTYPE html>
-<html lang="PT">
+<html lang="pt">
 
-  <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>CCVA | Caldas da Rainha</title>
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>CCVA | Caldas da Rainha</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
 
-    <!-- Ícones -->
-    <link href="assets/img/favicon.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <!-- Ícones -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-    <!-- Tipografias -->
-    <link href="https://fonts.googleapis.com" rel="preconnect">
-    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
-      rel="stylesheet">
+  <!-- Tipografias -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
+    rel="stylesheet">
 
-    <!-- Ficheiros CSS de Fornecedores -->
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <!-- Ficheiros CSS de Fornecedores -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
-    <!-- Ficheiros CSS Principais -->
-    <link href="assets/css/main.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
-    
-    <!-- Banner de Cookies -->
-    <div class="cookie-banner" id="cookieBanner">
-      <div class="cookie-card">
-        <div class="cookie-header">
-          <i class="fas fa-cookie-bite"></i>
-          <span>Consentimento de Cookies</span>
-        </div>
-        <p class="cookie-text">
-          Este site utiliza cookies para melhorar a sua experiência. Saiba mais na nossa
-          <a href="#" id="cookiePolicyLink">Política de Cookies e Privacidade</a>.
-        </p>
-        <div class="cookie-buttons">
-          <button class="cookie-btn btn-accept" id="acceptCookies">Aceitar</button>
-          <button class="cookie-btn btn-decline" id="declineCookies">Recusar</button>
-        </div>
+  <!-- Ficheiros CSS Principais -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+    /* Remover o border-radius de todos os botões */
+    button {
+      border-radius: 0 !important;
+    }
+
+    /* Espaçamento entre os botões de paginação */
+    .pagination .page-item {
+      margin-right: 10px;
+    }
+
+    .pagination .page-item:last-child {
+      margin-right: 0;
+    }
+
+    .btn.filter-btn {
+      background-color: #06BBCC;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .btn.filter-btn:hover {
+      background-color: #04a0ad;
+    }
+
+    .btn.filter-btn.active {
+      background-color: #0595a4;
+      font-weight: bold;
+    }
+
+    /* Responsividade para botões */
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn-group .btn {
+      flex: 1 1 auto;
+      min-width: 150px;
+    }
+
+    /* Banner de Cookies */
+    .cookie-banner {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .cookie-card {
+      padding: 20px;
+      max-width: 300px;
+    }
+
+    .cookie-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .cookie-text {
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .cookie-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .cookie-btn {
+      padding: 8px 12px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-accept {
+      background-color: #4caf50;
+      color: #fff;
+    }
+
+    .btn-decline {
+      background-color: #f44336;
+      color: #fff;
+    }
+
+    /* Modal de Cookies */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 20px;
+      max-width: 600px;
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      border: none;
+      background: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .modal-header {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+  </style>
+
+</head>
+
+<body class="index-page">
+  <!-- Banner de Cookies -->
+  <div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-card">
+      <div class="cookie-header">
+        <i class="fas fa-cookie-bite"></i>
+        <span>Consentimento de Cookies</span>
+      </div>
+      <p class="cookie-text">
+        Este site utiliza cookies para melhorar a sua experiência. Saiba mais na nossa
+        <a href="#" id="cookiePolicyLink">Política de Cookies e Privacidade</a>.
+      </p>
+      <div class="cookie-buttons">
+        <button class="cookie-btn btn-accept" id="acceptCookies">Aceitar</button>
+        <button class="cookie-btn btn-decline" id="declineCookies">Recusar</button>
       </div>
     </div>
+  </div>
 
-    <!-- Modal -->
-    <div class="modal" id="cookieModal">
-      <div class="modal-content">
-        <button class="modal-close" id="closeModal">&times;</button>
-        <div class="modal-header">Política de Cookies e Privacidade</div>
-        <div class="modal-body">
-          <h6>O que são Cookies?</h6>
-          <p>Os cookies são pequenos ficheiros que armazenam informações sobre a sua navegação e permitem:</p>
-          <ul>
-            <li>Melhorar a funcionalidade do site;</li>
-            <li>Oferecer conteúdos personalizados;</li>
-            <li>Armazenar preferências do utilizador;</li>
-            <li>Fornecer estatísticas para melhoria contínua.</li>
+  <!-- Modal -->
+  <div class="modal" id="cookieModal">
+    <div class="modal-content">
+      <button class="modal-close" id="closeModal">&times;</button>
+      <div class="modal-header">Política de Cookies e Privacidade</div>
+      <div class="modal-body">
+        <h6>O que são Cookies?</h6>
+        <p>Os cookies são pequenos ficheiros que armazenam informações sobre a sua navegação e permitem:</p>
+        <ul>
+          <li>Melhorar a funcionalidade do site;</li>
+          <li>Oferecer conteúdos personalizados;</li>
+          <li>Armazenar preferências do utilizador;</li>
+          <li>Fornecer estatísticas para melhoria contínua.</li>
+        </ul>
+        <h6>Política de Privacidade</h6>
+        <p>
+          Valorizamos a sua privacidade e garantimos que os seus dados são tratados de forma ética e segura.
+          Para mais informações, consulte a nossa <strong>Política de Privacidade</strong>.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cabeçalho -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/VA2.png" alt="Logo" class="logo-img">
+        <h1 class="sitename ms-2">CCVA</h1>
+        <h5 class="h5-logo">Caldas da Rainha</h5>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html" class="active">Início</a></li>
+          <li><a href="quem-somos.html">Quem Somos</a></li>
+          <li class="dropdown">
+            <a href="#">
+              <span>CCVA Igrejas</span> 
+              <i class="bi bi-chevron-down toggle-dropdown"></i>
+            </a>
+            <ul>
+              <li><a href="https://www.ccvalisboa.org/" target="_blank">Lisboa</a></li>
+              <li><a href="https://www.ccvamoscavide.org/ccva/" target="_blank">Moscavide</a></li>
+              <li><a href="https://www.figueiraigreja.org/" target="_blank">Figueira da Foz</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#">
+              <span>Ministérios</span>
+              <i class="bi bi-chevron-down toggle-dropdown"></i>
+            </a>
+            <ul>
+              <li><a href="ministério-mulheres.html">Mulheres</a></li>
+              <li><a href="ministério-homens.html">Homens</a></li>
+              <li><a href="ministério-adolescentes.html">Adolescentes</a></li>
+              <li><a href="ministério-crianças.html">Espaço Fixe</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Estudo Bíblico</a></li>
+          <li><a href="galeria.html">Galeria</a></li>
+          <li><a href="pedido_oração.html">Donativos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <main class="main">
+    <div class="page-title dark-background" data-aos="fade">
+      <div class="heading">
+        <div class="container">
+          <div class="row d-flex justify-content-center text-center">
+            <div class="col-lg-8"></div>
+          </div>
+        </div>
+      </div>
+      <nav class="breadcrumbs">
+        <div class="container">
+          <ol>
+            <li><a href="index.html">Início</a></li>
+            <li class="current">Estudo Bíblico</li>
+          </ol>
+        </div>
+      </nav>
+    </div>
+
+    <section id="gallery" class="gallery section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Estudo</h2>
+        <div>
+          <span>Bíblico</span>
+          <span class="description-title">ccva</span>
+        </div>
+      </div>
+      <!-- Botões de Filtro -->
+      <div class="container text-center mt-4 mb-4">
+        <div class="btn-group d-flex flex-wrap justify-content-center gap-2" role="group">
+          <button class="btn filter-btn active" data-category="all">Todos</button>
+          <button class="btn filter-btn" data-category="attitude">Atitude Cristã</button>
+          <button class="btn filter-btn" data-category="lazaro">Morte de Lázaro</button>
+          <button class="btn filter-btn" data-category="tessalonicenses">Primeiro Tessalonicenses</button>
+        </div>
+      </div>
+
+      <!-- Conteúdo dos Vídeos -->
+      <div class="container mb-5" data-aos="fade-up" data-aos-delay="100">
+        <div class="row align-items-xl-center gy-5" id="video-content"></div>
+
+        <!-- Paginação -->
+        <div class="pagination-container" id="pagination-controls" style="display: none;">
+          <ul class="pagination justify-content-center flex-wrap">
+            <li class="page-item">
+              <button class="btn-hover pagination-btn" data-page="1">1</button>
+            </li>
+            <li class="page-item">
+              <button class="btn-hover pagination-btn" data-page="2">2</button>
+            </li>
           </ul>
-          <h6>Política de Privacidade</h6>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer id="footer" class="footer dark-background">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <img src="assets/img/VA (2).png" alt="Logo" style="height: 40px; margin-right: 10px;">
+          </a>
           <p>
-            Valorizamos a sua privacidade e garantimos que os seus dados são tratados de forma ética e segura.
-            Para mais informações, consulte a nossa <strong>Política de Privacidade</strong>.
+            Na CCVA Vida Abundante, proclamamos <br>
+            a salvação em Jesus Cristo, o único <br>
+            que transforma vidas, renova famílias <br>
+            e oferece esperança a todos. <br>
+            Venha fazer parte desta família.
           </p>
         </div>
-      </div>
-    </div>
-  </head>
 
-  <body class="index-page">
-    <!-- Conteúdo original do site preservado -->
-    <header id="header" class="header d-flex align-items-center fixed-top">
-      <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
-        <a href="index.html" class="logo d-flex align-items-center">
-          <img alt="Descriptive text" src="assets/img/VA2.png" alt="Logo" class="logo-img">
-          <h1 class="sitename ms-2">CCVA </h1>
-          <h5 class="h5-logo">Caldas da Rainha</h5>
-        </a>
-
-        <nav id="navmenu" class="navmenu">
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Links Úteis</h4>
           <ul>
-            <li><a href="index.html" class="active">Início</a></li>
+            <li><a href="index.html">Início</a></li>
             <li><a href="quem-somos.html">Quem Somos</a></li>
-            <li class="dropdown"><a href="#"><span>CCVA Igrejas</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-                <li><a href="https://www.ccvalisboa.org/">Lisboa</a></li>
-                <li><a href="https://www.ccvamoscavide.org/ccva/">Moscavide</a></li>
-                <li><a href="https://www.figueiraigreja.org/">Figueira da Foz</a></li>
-              </ul>
-            </li>
-            <li class="dropdown"><a href="#"><span>Ministérios</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-                <li><a href="#">Mulheres</a></li>
-                <li><a href="#">Homens</a></li>
-                <li><a href="#">Adolescentes</a></li>
-                <li><a href="#">Super Igreja</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Estudo Bíblico</a></li>
-            <li><a href="galeria.html">Galeria</a></li>
             <li><a href="pedido_oração.html">Donativos</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="#">Política de Privacidade</a></li>
           </ul>
-          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-        </nav>
+        </div>
 
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Ministérios</h4>
+          <ul>
+            <li><a href="ministério-mulheres.html">Mulheres</a></li>
+            <li><a href="ministério-homens.html">Homens</a></li>
+            <li><a href="ministério-adolescentes.html">Adolescentes</a></li>
+            <li><a href="ministério-crianças.html">Espaço Fixe</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12 footer-contact">
+          <h4 class="mb-3">Contacto</h4>
+          <address>
+            <p class="mb-2">Rua Sebastião de Lima 37A,</p>
+            <p class="mb-3">Caldas da Rainha, 2500-277</p>
+          </address>
+          <p class="mb-2">
+            <a href="mailto:ccvacaldasdarainha@gmail.com" style="display: flex; align-items: center; gap: 12px;">
+              <i class="fas fa-envelope"></i> ccvacaldasdarainha@gmail.com
+            </a>
+          </p>
+          <p class="mb-3">
+            <a href="contacto.html" target="_blank" style="display: flex; align-items: center; gap: 12px;">
+              <i class="fas fa-map-marker-alt"></i> Localização
+            </a>
+          </p>
+          <div class="social-links d-flex gap-3 mt-4">
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-youtube"></i></a>
+            <a href="#"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
       </div>
-    </header>
-
-    <main class="main">
-      <div class="page-title dark-background" data-aos="fade">
-        <div class="heading">
-          <div class="container">
-            <div class="row d-flex justify-content-center text-center">
-              <div class="col-lg-8"></div>
-            </div>
-          </div>
-        </div>
-        <nav class="breadcrumbs">
-          <div class="container">
-            <ol>
-              <li><a href="index.html">Início</a></li>
-              <li class="current">Estudo Bíblico</li>
-            </ol>
-          </div>
-        </nav>
-      </div>
-      <section id="gallery" class="gallery section">
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2>Estudo Bíblico</h2>
-          <div><span>Escola</span> <span class="description-title">Bíblica CCVA</span></div>
-        </div>
-      
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-          <div class="row align-items-xl-center gy-5">
-            <!-- Video 1 -->
-            <div class="col-lg-6 col-md-12 mb-4">
-                <div class="video-item">
-                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/uZ0Jv5YUmMo" title="Estudo Bíblico 1" frameborder="0" allowfullscreen></iframe>
-                </div>
-                
-            </div>
-            <div class="col-lg-6 col-md-12 mb-4">
-              <div class="content" style="margin-top: -60px;">
-                <h2>A morte de Lazaro I</h2>
-                <p>
-                    Você já se perguntou como uma história de morte pode se transformar em um poderoso testemunho de vida? Descubra no estudo sobre a morte de Lázaro.
-                </p>
-              </div>
-            </div>
-      
-            <!-- Video 2 -->
-            <div class="col-lg-6 col-md-12 mb-4">
-                <div class="video-item">
-                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/Gr4G01Hio4E?start=21" title="Estudo Bíblico 1" frameborder="0" allowfullscreen></iframe>
-
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-12 mb-4">
-              <div class="content" style="margin-top: -60px;">
-                <h3>A morte de Lazaro II</h3>
-                <p>
-                    O estudo ainda não acabou! Estude como a morte de Lázaro revela verdades ainda mais profundas e poderosas da história dele, para glória de Deus.
-                </p>
-              </div>
-            </div>
-      
-            <!-- Video 3 -->
-            <div class="col-lg-6 col-md-12 mb-4">
-              <div class="video-item">
-                <iframe width="100%" height="315" src="https://www.youtube.com/embed/dogv5lXXMXc" title="Estudo Bíblico 1" frameborder="0" allowfullscreen></iframe>
-
-              </div>
-            </div>
-            <div class="col-lg-6 col-md-12 mb-4">
-              <div class="content" style="margin-top: -60px;">
-                <h3>Atitude Cristã</h3>
-                <p>
-                    5 Atitudes quando Cristo está no centro de todas as coisas.
-                </p>
-              </div>
-            </div>
-      
-            <!-- Video 4 -->
-            <div class="col-lg-6 col-md-12 mb-4">
-              <div class="video-item">
-                <iframe width="100%" height="315" src="https://www.youtube.com/embed/VlX9C9q2Wzg?start=110" title="Estudo Bíblico 1" frameborder="0" allowfullscreen></iframe>
-
-              </div>
-            </div>
-            <div class="col-lg-6 col-md-12 mb-4">
-              <div class="content" style="margin-top: -60px;">
-                <h3>Primeiro Tessalonicenses: Parte I</h3>
-                <p>
-                 Estude a parte I de Primeiro Tessalonicenses está esperando por você. Uma jornada de aprendizado que você não pode perder!
-                </p>
-              </div>
-            </div>
-      
-            
-          </div>
-        </div>
-      </section>
-      
-
-      
-        
-        
-  
-
-    </main>
-
-    <footer id="footer" class="footer dark-background">
-
-      <div class="container footer-top">
-        <div class="row gy-4">
-            <div class="col-lg-4 col-md-6 footer-about">
-                <a href="index.html" class="logo d-flex align-items-center">
-                    <img src="assets/img/VA (2).png" alt="Logo" style="height: 40px; margin-right: 10px;">
-                </a>
-                <p>
-                    Na CCVA Vida Abundante, proclamamos <br>
-                    a salvação em Jesus Cristo, o único <br>
-                    que transforma vidas, renova famílias <br>
-                    e oferece esperança a todos. <br>
-                    Venha fazer parte desta família.
-                </p>
-            </div>
-    
-            <div class="col-lg-2 col-md-3 footer-links">
-                <h4>Links Úteis</h4>
-                <ul>
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="quem-somos.html">Quem Somos</a></li>
-                    <li><a href="#">Donativos</a></li>
-                    <li><a href="#">Política de Privacidade</a></li>
-                </ul>
-            </div>
-    
-            <div class="col-lg-2 col-md-3 footer-links">
-                <h4>Ministérios</h4>
-                <ul>
-                    <li><a href="#">Mulheres</a></li>
-                    <li><a href="#">Homens</a></li>
-                    <li><a href="#">Adolescentes</a></li>
-                    <li><a href="#">Espaço Fixe</a></li>
-                </ul>
-            </div>
-    
-            <div class="col-lg-4 col-md-12 footer-contact">
-                <h4 class="mb-3">Contacto</h4>
-                <address>
-                    <p class="mb-2">Rua Sebastião de Lima 37A,</p>
-                    <p class="mb-3">Caldas da Rainha, 2500-277</p>
-                </address>
-                <p class="mb-2">
-                    <a href="mailto:ccvacaldasdarainha@gmail.com" style="display: flex; align-items: center; gap: 12px;">
-                        <i class="fas fa-envelope"></i> ccvacaldasdarainha@gmail.com
-                    </a>
-                </p>
-                <p class="mb-3">
-                    <a href="contacto.html" target="_blank" style="display: flex; align-items: center; gap: 12px;">
-                        <i class="fas fa-map-marker-alt"></i> Localização
-                    </a>
-                </p>
-            </div>
-    
-            <div class="social-links d-flex gap-3 mt-4">
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-youtube"></i></a>
-                <a href=""><i class="bi bi-whatsapp"></i></a>
-            </div>
-        </div>
     </div>
-    
 
-      <div class="container copyright text-center mt-4">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">2025 CCVA Caldas da Rainha</strong> <span>All Rights Reserved</span></p>
-        <div class="credits">
-          Designed by <a class="designed" href="#">EBM Tech & Media</a>
-        </div>
+    <div class="container copyright text-center mt-4">
+      <p>
+        © <span>Copyright</span>
+        <strong class="px-1 sitename">2025 CCVA Caldas da Rainha</strong>
+        <span>All Rights Reserved</span>
+      </p>
+      <div class="credits">
+        Designed by <a class="designed" href="#">EBM Tech & Media</a>
       </div>
+    </div>
+  </footer>
 
-    </footer>
+  <!-- Botão de voltar ao topo -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
 
-    <!-- Botão de voltar ao topo -->
-    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <!-- Preloader -->
+  <div id="preloader"></div>
 
-    <!-- Preloader -->
-    <div id="preloader"></div>
+  <!-- Ficheiros JS de Fornecedores -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
-    <!-- Ficheiros JS de Fornecedores -->
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
-    <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <!-- Ficheiros JS Principais -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/core.min.js"></script>
+  <script src="assets/js/script.js"></script>
 
-    <!-- Ficheiros JS Principais -->
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/core.min.js"></script>
-    <script src="assets/js/script.js"></script>
-    <!-- Leaflet CSS -->
-  </body>
+  <!-- Script dos Vídeos -->
+  <script>
+    // Dados dos vídeos
+    const videos = [
+      {
+        iframe: '<iframe width="100%" height="315" src="https://www.youtube.com/embed/dogv5lXXMXc" frameborder="0" allowfullscreen></iframe>',
+        title: 'Atitude Cristã',
+        description: '5 Atitudes quando Cristo está no centro de todas as coisas.',
+        category: 'attitude',
+      },
+      {
+        iframe: '<iframe width="100%" height="315" src="https://www.youtube.com/embed/uZ0Jv5YUmMo" frameborder="0" allowfullscreen></iframe>',
+        title: 'A morte de Lázaro I',
+        description: 'Uma história de morte que se transforma em um poderoso testemunho de vida.',
+        category: 'lazaro',
+      },
+      {
+        iframe: '<iframe width="100%" height="315" src="https://www.youtube.com/embed/Gr4G01Hio4E?start=21" frameborder="0" allowfullscreen></iframe>',
+        title: 'A morte de Lázaro II',
+        description: 'Verdades profundas reveladas na história de Lázaro.',
+        category: 'lazaro',
+      },
+      {
+        iframe: '<iframe width="100%" height="315" src="https://www.youtube.com/embed/VlX9C9q2Wzg?start=110" frameborder="0" allowfullscreen></iframe>',
+        title: 'Primeiro Tessalonicenses: Parte I',
+        description: 'Estude a parte I de Primeiro Tessalonicenses. Uma jornada de aprendizado que você não pode perder!',
+        category: 'tessalonicenses',
+        page: 1,
+      },
+      {
+        iframe: '<iframe width="100%" height="315" src="https://www.youtube.com/embed/41dwc50KIow" frameborder="0" allowfullscreen></iframe>',
+        title: 'Primeiro Tessalonicenses: Parte II',
+        description: 'Estude a parte II de Primeiro Tessalonicenses. Uma jornada de aprendizado que você não pode perder!',
+        category: 'tessalonicenses',
+        page: 1,
+      },
+      {
+        iframe: '<iframe width="100%" height="315" src="https://www.youtube.com/embed/Dw1zhgtVQqc" frameborder="0" allowfullscreen></iframe>',
+        title: 'Primeiro Tessalonicenses: Parte III',
+        description: 'Estude a parte III de Primeiro Tessalonicenses. Uma jornada de aprendizado que você não pode perder!',
+        category: 'tessalonicenses',
+        page: 1,
+      },
+      {
+        iframe: '<iframe width="100%" height="315" src="https://www.youtube.com/embed/quifKuqd7Lc" frameborder="0" allowfullscreen></iframe>',
+        title: 'Primeiro Tessalonicenses: Parte IV',
+        description: 'Estude a parte IV de Primeiro Tessalonicenses. Uma jornada de aprendizado que você não pode perder!',
+        category: 'tessalonicenses',
+        page: 2,
+      },
+      {
+        iframe: '<iframe width="100%" height="315" src="https://www.youtube.com/embed/tqjoXvSlF44" frameborder="0" allowfullscreen></iframe>',
+        title: 'Primeiro Tessalonicenses: Parte V',
+        description: 'Estude a parte V de Primeiro Tessalonicenses. Uma jornada de aprendizado que você não pode perder!',
+        category: 'tessalonicenses',
+        page: 2,
+      }
+    ];
 
+    const videoContent = document.getElementById('video-content');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const paginationControls = document.getElementById('pagination-controls');
+
+    // Renderiza os vídeos na tela
+    function renderVideos(category, page = null) {
+      videoContent.innerHTML = '';
+      paginationControls.style.display = 'none';
+
+      let filteredVideos = videos.filter(v => category === 'all' || v.category === category);
+
+      if (category === 'tessalonicenses' && page !== null) {
+        filteredVideos = filteredVideos.filter(v => v.page === page);
+        paginationControls.style.display = 'block';
+      }
+
+      filteredVideos.forEach(video => {
+        videoContent.innerHTML += `
+          <div class="col-lg-6 col-md-12 mb-4">
+            <div class="video-item">${video.iframe}</div>
+          </div>
+          <div class="col-lg-6 col-md-12 mb-4">
+            <div class="content" style="margin-top: -60px;">
+              <h3>${video.title}</h3>
+              <p>${video.description}</p>
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    // Evento nos botões de filtro
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const category = button.getAttribute('data-category');
+        renderVideos(category, category === 'tessalonicenses' ? 1 : null);
+
+        // Remove classe 'active' do botão anterior
+        document.querySelector('.filter-btn.active')?.classList.remove('active');
+        // Adiciona 'active' ao botão atual
+        button.classList.add('active');
+      });
+    });
+
+    // Evento nos botões de paginação
+    paginationControls.addEventListener('click', event => {
+      if (event.target.classList.contains('pagination-btn')) {
+        const page = parseInt(event.target.getAttribute('data-page'));
+        renderVideos('tessalonicenses', page);
+
+        // Remove classe 'active' do botão anterior
+        document.querySelector('.pagination-btn.active')?.classList.remove('active');
+        // Adiciona 'active' ao botão atual
+        event.target.classList.add('active');
+      }
+    });
+
+    // Renderiza todos os vídeos inicialmente
+    renderVideos('all');
+  </script>
+</body>
 </html>

@@ -1,621 +1,738 @@
 <!DOCTYPE html>
-<html lang="PT">
+<html lang="pt">
 
-  <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>CCVA - Vida Abundante | Experiência Inspiradora</title>
-    <meta name="description" content="A CCVA Vida Abundante em Caldas da Rainha é um espaço acolhedor para transformar vidas e edificar famílias com a palavra de Deus.">
-    <meta name="keywords" content="">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>CCVA - Vida Abundante | Experiência Inspiradora</title>
+  <meta name="description" content="A CCVA Vida Abundante em Caldas da Rainha é um espaço acolhedor para transformar vidas e edificar famílias com a palavra de Deus.">
+  <meta name="keywords" content="">
 
-    <!-- Ícones -->
-    <link href="assets/img/favicon.png" rel="icon">
-    <link href="assets/img/VA1.png" rel="apple-touch-icon">
+  <!-- Ícones -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/VA1.png" rel="apple-touch-icon">
 
-    <!-- Tipografias -->
-    <link href="https://fonts.googleapis.com" rel="preconnect">
-    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <!-- Tipografias -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-    <!-- Ficheiros CSS de Fornecedores -->
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <!-- Ficheiros CSS de Fornecedores -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
-    <!-- Ficheiros CSS Principais -->
-    <link href="assets/css/main.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
+  <!-- Ficheiros CSS Principais -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
 
-    <!-- Banner de Cookies -->
-    <div class="cookie-banner" id="cookieBanner">
-      <div class="cookie-card">
-        <div class="cookie-header">
-          <i class="fas fa-cookie-bite"></i>
-          <span>Consentimento de Cookies</span>
-        </div>
-        <p class="cookie-text">
-          Este site utiliza cookies para melhorar a sua experiência. Saiba mais na nossa
-          <a href="#" id="cookiePolicyLink">Política de Cookies e Privacidade</a>.
+</head>
+
+<body class="index-page">
+
+  <!-- Banner de Cookies -->
+  <div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-card">
+      <div class="cookie-header">
+        <i class="fas fa-cookie-bite"></i>
+        <span>Consentimento de Cookies</span>
+      </div>
+      <p class="cookie-text">
+        Este site utiliza cookies para melhorar a sua experiência. Saiba mais na nossa
+        <a href="#" id="cookiePolicyLink">Política de Cookies e Privacidade</a>.
+      </p>
+      <div class="cookie-buttons">
+        <button class="cookie-btn btn-accept" id="acceptCookies">Aceitar</button>
+        <button class="cookie-btn btn-decline" id="declineCookies">Recusar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="cookieModal">
+    <div class="modal-content">
+      <button class="modal-close" id="closeModal">&times;</button>
+      <div class="modal-header">Política de Cookies e Privacidade</div>
+      <div class="modal-body">
+        <h6>O que são Cookies?</h6>
+        <p>Os cookies são pequenos ficheiros que armazenam informações sobre a sua navegação e permitem:</p>
+        <ul>
+          <li>Melhorar a funcionalidade do site;</li>
+          <li>Oferecer conteúdos personalizados;</li>
+          <li>Armazenar preferências do utilizador;</li>
+          <li>Fornecer estatísticas para melhoria contínua.</li>
+        </ul>
+        <h6>Política de Privacidade</h6>
+        <p>
+          Valorizamos a sua privacidade e garantimos que os seus dados são tratados de forma ética e segura.
+          Para mais informações, consulte a nossa <strong>Política de Privacidade</strong>.
         </p>
-        <div class="cookie-buttons">
-          <button class="cookie-btn btn-accept" id="acceptCookies">Aceitar</button>
-          <button class="cookie-btn btn-decline" id="declineCookies">Recusar</button>
-        </div>
       </div>
     </div>
+  </div>
 
-    <!-- Modal -->
-    <div class="modal" id="cookieModal">
-      <div class="modal-content">
-        <button class="modal-close" id="closeModal">&times;</button>
-        <div class="modal-header">Política de Cookies e Privacidade</div>
-        <div class="modal-body">
-          <h6>O que são Cookies?</h6>
-          <p>Os cookies são pequenos ficheiros que armazenam informações sobre a sua navegação e permitem:</p>
-          <ul>
-            <li>Melhorar a funcionalidade do site;</li>
-            <li>Oferecer conteúdos personalizados;</li>
-            <li>Armazenar preferências do utilizador;</li>
-            <li>Fornecer estatísticas para melhoria contínua.</li>
-          </ul>
-          <h6>Política de Privacidade</h6>
-          <p>
-            Valorizamos a sua privacidade e garantimos que os seus dados são tratados de forma ética e segura.
-            Para mais informações, consulte a nossa <strong>Política de Privacidade</strong>.
-          </p>
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/VA2.png" alt="Logo" class="logo-img">
+        <h1 class="sitename ms-2">CCVA</h1>
+        <h5 class="h5-logo">Caldas da Rainha</h5>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#" class="active">Início</a></li>
+          <li><a href="quem-somos.html">Quem Somos</a></li>
+          <li class="dropdown">
+            <a href="#">
+              <span>CCVA Igrejas</span>
+              <i class="bi bi-chevron-down toggle-dropdown"></i>
+            </a>
+            <ul>
+              <li><a href="https://www.ccvalisboa.org/">Lisboa</a></li>
+              <li><a href="https://www.ccvamoscavide.org/ccva/">Moscavide</a></li>
+              <li><a href="https://www.figueiraigreja.org/">Figueira da Foz</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#">
+              <span>Ministérios</span>
+              <i class="bi bi-chevron-down toggle-dropdown"></i>
+            </a>
+            <ul>
+              <li><a href="ministério-mulheres.html">Mulheres</a></li>
+              <li><a href="ministério-homens.html">Homens</a></li>
+              <li><a href="ministério-adolecentes.html">Adolescentes</a></li>
+              <li><a href="ministério-crianças.html">Espaço Fixe</a></li>
+            </ul>
+          </li>
+          <li><a href="estudo-bíblico.html">Estudo Bíblico</a></li>
+          <li><a href="galeria.html">Galeria</a></li>
+          <li><a href="#">Donativos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Secção Hero -->
+    <section id="hero" class="hero section dark-background" style="padding: 60px 0;">
+      <!-- Vídeo do Vimeo -->
+      <div class="video-section-vimeo hero-bg">
+        <div class="video-wrapper">
+          <div class="video-container">
+            <iframe
+              src="https://player.vimeo.com/video/1046838240?autoplay=1&loop=1&muted=1&controls=0&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+              frameborder="0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
         </div>
       </div>
-    </div>
 
-  </head>
-
-  <body class="index-page">
-
-    <header id="header" class="header d-flex align-items-center fixed-top">
-      <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
-        <a href="index.html" class="logo d-flex align-items-center">
-          <img alt="Descriptive text" src="assets/img/VA2.png" alt="Logo" class="logo-img">
-          <h1 class="sitename ms-2">CCVA </h1>
-          <h5 class="h5-logo">Caldas da Rainha</h5>
-        </a>
-
-        <nav id="navmenu" class="navmenu">
-          <ul>
-            <li><a href="#" class="active">Início</a></li>
-            <li><a href="quem-somos.html">Quem Somos</a></li>
-            <li class="dropdown"><a href="#"><span>CCVA Igrejas</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-                <li><a href="https://www.ccvalisboa.org/">Lisboa</a></li>
-                <li><a href="https://www.ccvamoscavide.org/ccva/">Moscavide</a></li>
-                <li><a href="https://www.figueiraigreja.org/">Figueira da Foz</a></li>
-              </ul>
-            </li>
-            <li class="dropdown"><a href="#"><span>Ministérios</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-                <li><a href="#">Mulheres</a></li>
-                <li><a href="#">Homens</a></li>
-                <li><a href="#">Adolescentes</a></li>
-                <li><a href="#">Super Igreja</a></li>
-              </ul>
-            </li>
-            <li><a href="estudo-bíblico.html">Estudo Bíblico</a></li>
-            <li><a href="galeria.html">Galeria</a></li>
-            <li><a href="#">Donativos</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-          </ul>
-          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-        </nav>
-
-      </div>
-    </header>
-
-    <main class="main">
-
-      <!-- Secção Hero -->
-      <section id="hero" class="hero section dark-background" style="padding: 60px 0;">
-        <!-- Remover a linha abaixo (imagem) -->
-        <!-- <img alt="Descriptive text" src="assets/img/Design sem nome (2).png" alt="" class="hero-bg"> -->
-        
-        <!-- Inserir o vídeo do Vimeo no lugar da imagem -->
-        <div class="video-section-vimeo hero-bg">
-          <div class="video-wrapper">
-            <div class="video-container">
-              <iframe
-                src="https://player.vimeo.com/video/1046838240?autoplay=1&loop=1&muted=1&controls=0&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
-                frameborder="0"
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowfullscreen>
-              </iframe>
+      <div class="container">
+        <div class="row gy-4 justify-content-between">
+          <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-in">
+            <h1>Faz uma visita.<br><span>CCVA Vida Abundante.</span></h1>
+            <p>"Transformando vidas, edificando famílias e espalhando o amor e a salvação de Jesus Cristo."</p>
+            <div class="d-flex">
+              <a
+                href="https://www.youtube.com/watch?v=8GhwWtO5qfE&t=23s"
+                class="glightbox btn-culto-online">
+                <i class="bi bi-play-circle"></i> Culto Online
+              </a>
+            </div>
+            <!-- Botões extras de vídeo (se quiser manter, pode ajustar) -->
+            <div class="d-flex">
+              <a
+                href="https://www.youtube.com/watch?v=8GhwWtO5qfE&t=23s"
+                class="glightbox btn-watch-video d-flex align-items-center">
+              </a>
+            </div>
+            <div class="d-flex">
+              <a
+                href="https://www.youtube.com/watch?v=8GhwWtO5qfE&t=23s"
+                class="glightbox btn-watch-video d-flex align-items-center">
+              </a>
             </div>
           </div>
         </div>
-        
-      
-        <div class="container">
-          <div class="row gy-4 justify-content-between">      
-            <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-in">
-              <h1>Faz uma visita.<br><span>CCVA Vida Abundante.</span></h1>
-              <p>"Transformando vidas, edificando famílias e espalhando o amor e a salvação de Jesus Cristo."</p>
-              <div class="d-flex">
-                
-                <a href="https://www.youtube.com/watch?v=8GhwWtO5qfE&t=23s" class="glightbox btn-culto-online">
-                  <i class="bi bi-play-circle"></i> Culto Online
-                </a>
-                
+      </div>
+
+      <svg
+        class="hero-waves"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28"
+        preserveAspectRatio="none">
+        <defs>
+          <path
+            id="wave-path"
+            d="M-160 44c30 0 58-18 88-18s 58 18 88 18
+               58-18 88-18 58 18 88 18 v44h-352z">
+          </path>
+        </defs>
+        <g class="wave1">
+          <use xlink:href="#wave-path" x="50" y="3"></use>
+        </g>
+        <g class="wave2">
+          <use xlink:href="#wave-path" x="50" y="0"></use>
+        </g>
+        <g class="wave3">
+          <use xlink:href="#wave-path" x="50" y="9"></use>
+        </g>
+      </svg>
+    </section>
+    <!-- /Secção Hero -->
+
+    <!-- Secção About -->
+    <section id="about" class="about section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row align-items-xl-center gy-5">
+
+          <div class="col-xl-5 content">
+            <h3>Bem-vindos</h3>
+            <h2>És o nosso convidado!</h2>
+            <p>
+              Bem-vindos à CCVA Vida Abundante! É com enorme alegria que vos convidamos a fazer parte desta família.
+              Venham visitar-nos, participar nas celebrações e conhecer mais sobre o amor e a graça de Jesus Cristo.
+              Estaremos à vossa espera!
+            </p>
+            <a href="contacto.html" class="read-more">
+              <span>Visite-nos!</span>
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="col-xl-7">
+            <div class="row gy-4 icon-boxes">
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon-box">
+                  <i class="fa fa-users"></i>
+                  <h3>Quem Somos</h3>
+                  <p>
+                    A CCVA Caldas da Rainha é uma igreja acolhedora que procura viver e partilhar
+                    o amor e a salvação de Deus com todas as pessoas.
+                  </p>
+                  <a href="quem-somos.html" class="btn-hover">
+                    Lê Mais
+                    <span class="arrow">&#8594;</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="icon-box">
+                  <i class="fa fa-praying-hands"></i>
+                  <h3>Pedidos de Oração</h3>
+                  <p>
+                    Faça os seus pedidos de oração e permita-nos interceder por si. Juntos,
+                    acreditamos no poder da oração para transformar vidas.
+                  </p>
+                  <a href="mensagem.html" class="btn-hover">
+                    Lê Mais
+                    <span class="arrow">&#8594;</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="icon-box">
+                  <i class="fas fa-bible"></i>
+                  <h3>Bíblia On-line</h3>
+                  <p>
+                    Aprofunda a tua compreensão da Palavra de Deus com a nossa
+                    Bíblia on-line, acessível a qualquer momento.
+                  </p>
+                  <a href="bíblia-online.html" class="btn-hover">
+                    Lê Mais
+                    <span class="arrow">&#8594;</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+                <div class="icon-box">
+                  <i class="bi bi-heart-fill"></i>
+                  <h3>Donativo</h3>
+                  <p>
+                    Ajuda-nos a erguer a obra de Deus, sendo parte ativa deste grande
+                    propósito que transforma vidas.
+                  </p>
+                  <a href="#" class="btn-hover">
+                    Lê Mais
+                    <span class="arrow">&#8594;</span>
+                  </a>
+                </div>
               </div>
               
-              <div class="d-flex">
-                <a href="https://www.youtube.com/watch?v=8GhwWtO5qfE&t=23s" class="glightbox btn-watch-video d-flex align-items-center"></a>
-              </div>
-              <div class="d-flex">
-                <a href="https://www.youtube.com/watch?v=8GhwWtO5qfE&t=23s" class="glightbox btn-watch-video d-flex align-items-center"></a>
-              </div>
             </div>
           </div>
+
         </div>
-      
-        <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
-          <defs>
-            <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
-          </defs>
-          <g class="wave1">
-            <use xlink:href="#wave-path" x="50" y="3"></use>
-          </g>
-          <g class="wave2">
-            <use xlink:href="#wave-path" x="50" y="0"></use>
-          </g>
-          <g class="wave3">
-            <use xlink:href="#wave-path" x="50" y="9"></use>
-          </g>
-        </svg>
-      </section>
-      
-
-      <!-- Secção About -->
-      <section id="about" class="about section">
-
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-          <div class="row align-items-xl-center gy-5">
-
-            <div class="col-xl-5 content">
-              <h3>Bem-vindos</h3>
-              <h2>És o nosso convidado!</h2>
-              <p>Bem-vindos à CCVA Vida Abundante! É com enorme alegria que vos convidamos a fazer parte desta família. Venham visitar-nos, participar nas celebrações e conhecer mais sobre o amor e a graça de Jesus Cristo. Estaremos à vossa espera!</p>
-              <a href="contacto.html" class="read-more"><span>Visite-nos!</span><i class="bi bi-arrow-right"></i></a>
-            </div>
-
-            <div class="col-xl-7">
-              <div class="row gy-4 icon-boxes">
-
-                <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-                  <div class="icon-box">
-                    <i class="fa fa-users"></i>
-                    <h3>Quem Somos</h3>
-                    <p>
-                      A CCVA Caldas da Rainha é uma igreja acolhedora que procura viver e partilhar o amor de Deus com todas as pessoas.
-                    </p>
-                    <a href="quem-somos.html" class="btn-hover">
-                      Lê Mais
-                      <span class="arrow">&#8594;</span>
-                    </a>
-                  </div>
-                </div>
-                
-                <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
-                  <div class="icon-box">
-                    <i class="fa fa-file"></i>
-                    <h3>Artigos</h3>
-                    <p>Consulte os artigos da CCVA Caldas da Rainha e explore conteúdos importantes e enriquecedores.</p>
-                    <a href="#" class="btn-hover">
-                      Lê Mais
-                      <span class="arrow">&#8594;</span>
-                    </a>
-                  </div>
-                </div> 
-
-                <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
-                  <div class="icon-box">
-                    <i class="fas fa-bible"></i>
-                    <h3>Bíblia On-line</h3>
-                    <p>Aprofunda a tua compreensão da Palavra de Deus com a nossa Bíblia on-line, acessível a qualquer momento.</p>
-                    <a href="bíblia-online.html" class="btn-hover">
-                      Lê Mais
-                      <span class="arrow">&#8594;</span>
-                    </a>
-                  </div>
-                </div> 
-
-                <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
-                  <div class="icon-box">
-                    <i class="bi bi-heart-fill"></i>
-                    <h3>Envolve-te</h3>
-                    <p>Ajuda-nos a erguer a obra de Deus, sendo parte ativa deste grande propósito que transforma vidas.</p>
-                    <a href="#" class="btn-hover">
-                      Lê Mais
-                      <span class="arrow">&#8594;</span>
-                    </a>
-                  </div>
-                </div> 
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </section><!-- /Secção About -->
-
-      <section id="custom-features" class="custom-features-section">
-        <div class="container section-title" data-aos="fade-up">
-          <h2>Eventos</h2>
-          <div><span>Programação</span> <span class="description-title">Semanal</span></div>
-        </div>
-        <div class="container">
-          <div class="row gy-4">
-            <!-- Cartão 1 - Oração -->
-            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-              <div class="custom-feature-item">
-                <div class="custom-feature-item-header">
-                  <i class="fas fa-praying-hands" style="color: #ffbb2c;"></i>
-                  <h3>Sala de Oração</h3>
-                </div>
-                <p class="custom-schedule">Quarta-feira, Verão: 21h / Inverno: 8:30h</p>
-                <p>Participe nas nossas reuniões de oração e intercessão, momentos de fé e entrega ao Senhor.</p>
-                
-              </div>
-            </div>
-      
-            <!-- Cartão 2 - Estudo Bíblico -->
-            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-              <div class="custom-feature-item">
-                <div class="custom-feature-item-header">
-                  <i class="fas fa-book-open" style="color: #5578ff;"></i>
-                  <h3>Estudo Bíblico</h3>
-                </div>
-                <p class="custom-schedule">Sexta-feira, 21h</p>
-                <p>Aprofunda os teus conhecimentos na Palavra de Deus com os nossos estudos bíblicos semanais.</p>
-                
-              </div>
-            </div>
-      
-            <!-- Cartão 3 - Culto de Celebração -->
-            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-              <div class="custom-feature-item">
-                <div class="custom-feature-item-header">
-                  <i class="fas fa-church" style="color: #e80368;"></i>
-                  <h3>Culto de Celebração</h3>
-                </div>
-                <p class="custom-schedule">Domingo, 10:30h</p>
-                <p>Junta-te a nós num culto vibrante para celebrar o amor de Jesus Cristo com louvor e adoração.</p>
-                
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-
-      <section id="custom-features" class="custom-features-section">
-        <div id="video-section" class="video-section">
-          <div class="container section-title" data-aos="fade-up">
-            <h2>Plenus</h2>
-            <div><span>Conferência</span> <span class="description-title">CCVA</span></div>
-          </div>
-          <div class="container" data-aos="fade-up" data-aos-delay="100">
-            <div class="row align-items-center">
-              <!-- Vídeo -->
-              <div class="col-lg-6">
-                <div class="video-wrapper">
-                  <iframe
-                    src="https://www.youtube.com/embed/I9XR2oHIQWM"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                    class="video-embed">
-                  </iframe>
-                </div>
-              </div>
-              <!-- Texto -->
-              <div class="col-lg-6">
-                <h3 class="video-title">Assiste à Conferência Plenus.</h3>
-                <p class="video-description">
-                  Aproveita momentos únicos de inspiração e aprendizagem. Descobre temas importantes, conecta-te com perspetivas renovadoras e participa numa experiência que poderá transformar a tua visão.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-
-      <section id="custom-features" class="custom-features-section">
-        <div class="container section-title text-start" data-aos="fade-up">
-          <h2>Galeria</h2>
-          <div><span>Fotos de Celebrações</span> <span class="description-title">CCVA</span></div>
-          <div class="btn-carousel-wrapper" data-aos="fade-up">
-            <a href="galeria.html" class="btn btn-primary btn-carousel">Vê Mais!</a>
-          </div>
-        </div>
-        
-
-        <section class="start-carousel">
-          <!-- Owl Carousel-->
-          <div class="owl-carousel owl-corporate-wide" data-items="1" data-sm-items="2" data-md-items="3" data-xl-items="4" data-stage-padding="60" data-sm-stage-padding="38" data-margin="20" data-slide-transition="linear" data-smart-speed="4000" data-autoplay-time-out="4000">
-            <div class="owl-corporate-item"><img alt="Descriptive text" src="images/ccva-caldas-rainha-1.webp" alt="" width="440" height="300"/></div>
-            <div class="owl-corporate-item"><img alt="Descriptive text" src="images/ccva-caldas-rainha-2.webp" alt="" width="440" height="300"/></div>
-            <div class="owl-corporate-item"><img alt="Descriptive text" src="images/ccva-caldas-rainha-3.webp" alt="" width="440" height="300"/></div>
-            <div class="owl-corporate-item"><img alt="Descriptive text" src="images/ccva-caldas-rainha-4.webp" alt="" width="440" height="300"/></div>
-          </div>
-          <!-- Segunda Carrossel -->
-          <div class="owl-carousel owl-corporate-wide wow fadeInUp" data-items="1" data-sm-items="2" data-md-items="3" data-xl-items="4" data-stage-padding="80" data-sm-stage-padding="38" data-margin="20" data-slide-transition="linear" data-smart-speed="4500" data-autoplay-time-out="4500" data-center="true">
-            <div class="owl-corporate-item"><img alt="Descriptive text" src="images/ccva-caldas-rainha-5.webp" alt="" width="440" height="300"/></div>
-            <div class="owl-corporate-item"><img alt="Descriptive text" src="images/ccva-caldas-rainha-6.webp" alt="" width="440" height="300"/></div>
-            <div class="owl-corporate-item"><img alt="Descriptive text" src="images/ccva-caldas-rainha-7.webp" alt="" width="440" height="300"/></div>
-            <div class="owl-corporate-item"><img alt="Descriptive text" src="images/ccva-caldas-rainha-8.webp" alt="" width="440" height="300"/></div>
-          </div>
-        </section>
-      </section>
-
-
-      <!-- Secção Depoimentos -->
-      <div class="container section-title text-start" data-aos="fade-up">
-        <h2>Depoimentos</h2>
-        <div><span>Caldas da Rainha</span> <span class="description-title">CCVA</span></div>
       </div>
-      <section id="testimonials" class="testimonials section dark-background">
+    </section>
+    <!-- /Secção About -->
 
-        <img alt="Descriptive text" src="assets/img/ccva-foto1 (2).webp" class="testimonials-bg" alt="">
-
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-          <div class="swiper init-swiper">
-            <script type="application/json" class="swiper-config">
-              {
-                "loop": true,
-                "speed": 600,
-                "autoplay": {
-                  "delay": 5000
-                },
-                "slidesPerView": "auto",
-                "pagination": {
-                  "el": ".swiper-pagination",
-                  "type": "bullets",
-                  "clickable": true
-                }
-              }
-            </script>
-            <div class="swiper-wrapper">
-
-              <div class="swiper-slide">
-                <div class="testimonial-item">
-                  <img alt="Descriptive text" src="assets/img/pr-daniel.jpg" class="testimonial-img" alt="">
-                  <h3>Daniel Freman</h3>
-                  <h4>Pastor</h4>
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    <span>Ser pastor da CCVA é uma honra e uma missão, guiando vidas ao propósito de Deus com amor e dedicação.</span>
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="testimonial-item">
-                  <img alt="Descriptive text" src="assets/img/pr-daniel.jpg" class="testimonial-img" alt="">
-                  <h3>Daniel Freman</h3>
-                  <h4>Pastor</h4>
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    <span>Ser pastor da CCVA é uma honra e uma missão, guiando vidas ao propósito de Deus com amor e dedicação.</span>
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="testimonial-item">
-                  <img alt="Descriptive text" src="assets/img/pr-daniel.jpg" class="testimonial-img" alt="">
-                  <h3>Daniel Freman</h3>
-                  <h4>Pastor</h4>
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    <span>Ser pastor da CCVA é uma honra e uma missão, guiando vidas ao propósito de Deus com amor e dedicação.</span>
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="testimonial-item">
-                  <img alt="Descriptive text" src="assets/img/pr-daniel.jpg" class="testimonial-img" alt="">
-                  <h3>Daniel Freman</h3>
-                  <h4>Pastor</h4>
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    <span>Ser pastor da CCVA é uma honra e uma missão, guiando vidas ao propósito de Deus com amor e dedicação.</span>
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="testimonial-item">
-                  <img alt="Descriptive text" src="assets/img/pr-daniel.jpg" class="testimonial-img" alt="">
-                  <h3>Daniel Freman</h3>
-                  <h4>Pastor</h4>
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    <span>Ser pastor da CCVA é uma honra e uma missão, guiando vidas ao propósito de Deus com amor e dedicação.</span>
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-
-            </div>
-            <div class="swiper-pagination"></div>
-          </div>
-
+    <section id="custom-features" class="custom-features-section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Eventos</h2>
+        <div>
+          <span>Programação</span>
+          <span class="description-title">Semanal</span>
         </div>
-
-      </section><!-- /Depoimentos -->
-
-
-      <!-- Secção FAQ -->
-      <section id="faq" class="faq section light-background">
-
-        <div class="container-fluid">
-
-          <div class="row gy-4">
-
-            <div class="col-lg-7 d-flex flex-column justify-content-center order-2 order-lg-1">
-
-              <div class="content px-xl-5" data-aos="fade-up" data-aos-delay="100">
-                <h3><span>Perguntas </span><strong>Respostas</strong></h3>
-                <p>
-                  Tens dúvidas sobre o Cristianismo? Aqui podes explorar respostas detalhadas para as perguntas mais comuns sobre os ensinamentos, práticas e valores cristãos. Descobre, de forma clara, o que Jesus Cristo significa e como Ele influencia e transforma vidas.
-                </p>
-              </div>
-
-              <div class="faq-container px-xl-5" data-aos="fade-up" data-aos-delay="200">
-
-                <div class="faq-item">
-                  <i class="faq-icon bi bi-question-circle"></i>
-                  <h3>Sabes o que significa "Messias"?</h3>
-                  <div class="faq-content">
-                    <p>"Messias" vem do hebraico e significa "Ungido". No cristianismo, Jesus é considerado o Messias prometido para salvar a humanidade.</p>
-                  </div>
-                  <i class="faq-toggle bi bi-chevron-right"></i>
-                </div>
-
-                <div class="faq-item">
-                  <i class="faq-icon bi bi-question-circle"></i>
-                  <h3>Sabes o que significa a palavra "Evangelho"?</h3>
-                  <div class="faq-content">
-                    <p>"Evangelho" significa "boa notícia" ou "boa nova". Refere-se à mensagem de salvação e esperança trazida por Jesus Cristo.</p>
-                  </div>
-                  <i class="faq-toggle bi bi-chevron-right"></i>
-                </div>
-
-                <div class="faq-item">
-                  <i class="faq-icon bi bi-question-circle"></i>
-                  <h3>Sabes que Jesus morreu por toda a humanidade?</h3>
-                  <div class="faq-content">
-                    <p>A morte de Jesus foi um sacrifício perfeito para redimir os pecados e salvar toda a humanidade, algo que ninguém poderia fazer por si próprio.</p>
-                  </div>
-                  <i class="faq-toggle bi bi-chevron-right"></i>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="col-lg-5 order-1 order-lg-2">
-              <img alt="Descriptive text" src="assets/img/faq.jpg" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="100">
-            </div>
-          </div>
-
-        </div>
-
-      </section><!-- /FAQ -->
-
-    </main>
-
-    <footer id="footer" class="footer dark-background">
-
-      <div class="container footer-top">
+      </div>
+      <div class="container">
         <div class="row gy-4">
-            <div class="col-lg-4 col-md-6 footer-about">
-                <a href="index.html" class="logo d-flex align-items-center">
-                    <img src="assets/img/VA (2).png" alt="Logo" style="height: 40px; margin-right: 10px;">
-                </a>
-                <p>
-                    Na CCVA Vida Abundante, proclamamos <br>
-                    a salvação em Jesus Cristo, o único <br>
-                    que transforma vidas, renova famílias <br>
-                    e oferece esperança a todos. <br>
-                    Venha fazer parte desta família.
-                </p>
-            </div>
-    
-            <div class="col-lg-2 col-md-3 footer-links">
-                <h4>Links Úteis</h4>
-                <ul>
-                    <li><a href="#">Início</a></li>
-                    <li><a href="quem-somos.html">Quem Somos</a></li>
-                    <li><a href="#custom-features">Donativos</a></li>
-                    <li><a href="#">Política de Privacidade</a></li>
-                </ul>
-            </div>
-    
-            <div class="col-lg-2 col-md-3 footer-links">
-                <h4>Ministérios</h4>
-                <ul>
-                    <li><a href="#">Mulheres</a></li>
-                    <li><a href="#">Homens</a></li>
-                    <li><a href="#">Adolescentes</a></li>
-                    <li><a href="#">Super Igreja</a></li>
-                </ul>
-            </div>
-    
-            <div class="col-lg-4 col-md-12 footer-contact">
-                <h4 class="mb-3">Contacto</h4>
-                <address>
-                    <p class="mb-2">Rua Sebastião de Lima 37A,</p>
-                    <p class="mb-3">Caldas da Rainha, 2500-277</p>
-                </address>
-                <p class="mb-2">
-                    <a href="mailto:ccvacaldasdarainha@gmail.com" style="display: flex; align-items: center; gap: 12px;">
-                        <i class="fas fa-envelope"></i> ccvacaldasdarainha@gmail.com
-                    </a>
-                </p>
-                <p class="mb-3">
-                    <a href="contacto.html" target="_blank" style="display: flex; align-items: center; gap: 12px;">
-                        <i class="fas fa-map-marker-alt"></i> Localização
-                    </a>
-                </p>
-            </div>
-    
-            <div class="social-links d-flex gap-3 mt-4">
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-youtube"></i></a>
-                <a href=""><i class="bi bi-whatsapp"></i></a>
-            </div>
-        </div>
-    </div>
-    
 
-      <div class="container copyright text-center mt-4">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">2025 CCVA Caldas da Rainha</strong> <span>All Rights Reserved</span></p>
-        <div class="credits">
-          Designed by <a class="designed" href="#">EBM Tech & Media</a>
+          <!-- Cartão 1 - Oração -->
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="custom-feature-item">
+              <div class="custom-feature-item-header">
+                <i class="fas fa-praying-hands" style="color: #ffbb2c;"></i>
+                <h3>Sala de Oração</h3>
+              </div>
+              <p class="custom-schedule">Quarta-feira, Verão: 21h / Inverno: 8:30h</p>
+              <p>
+                Participe nas nossas reuniões de oração e intercessão,
+                momentos de fé e entrega ao Senhor.
+              </p>
+            </div>
+          </div>
+
+          <!-- Cartão 2 - Estudo Bíblico -->
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="custom-feature-item">
+              <div class="custom-feature-item-header">
+                <i class="fas fa-book-open" style="color: #5578ff;"></i>
+                <h3>Estudo Bíblico</h3>
+              </div>
+              <p class="custom-schedule">Sexta-feira, 21h</p>
+              <p>
+                Aprofunda os teus conhecimentos na Palavra de Deus
+                com os nossos estudos bíblicos semanais.
+              </p>
+            </div>
+          </div>
+
+          <!-- Cartão 3 - Culto de Celebração -->
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="custom-feature-item">
+              <div class="custom-feature-item-header">
+                <i class="fas fa-church" style="color: #e80368;"></i>
+                <h3>Culto de Celebração</h3>
+              </div>
+              <p class="custom-schedule">Domingo, 10:30h</p>
+              <p>
+                Junta-te a nós num culto vibrante para celebrar
+                o amor de Jesus Cristo com louvor e adoração.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="custom-features" class="custom-features-section">
+      <div id="video-section" class="video-section">
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Plenus</h2>
+          <div>
+            <span>Conferência</span>
+            <span class="description-title">CCVA</span>
+          </div>
+        </div>
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row align-items-center">
+
+            <!-- Vídeo -->
+            <div class="col-lg-6">
+              <div class="video-wrapper">
+                <iframe
+                  src="https://www.youtube.com/embed/I9XR2oHIQWM"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                  class="video-embed">
+                </iframe>
+              </div>
+            </div>
+
+            <!-- Texto -->
+            <div class="col-lg-6">
+              <h3 class="video-title">Assiste à Conferência Plenus.</h3>
+              <p class="video-description">
+                Aproveita momentos únicos de inspiração e aprendizagem.
+                Descobre temas importantes, conecta-te com perspetivas renovadoras
+                e participa numa experiência que poderá transformar a tua visão.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="custom-features" class="custom-features-section">
+      <div class="container section-title text-start" data-aos="fade-up">
+        <h2>Galeria</h2>
+        <div>
+          <span>Fotos de Celebrações</span>
+          <span class="description-title">CCVA</span>
+        </div>
+        <div class="btn-carousel-wrapper" data-aos="fade-up">
+          <a href="galeria.html" class="btn btn-primary btn-carousel">Vê Mais!</a>
         </div>
       </div>
 
-    </footer>
+      <section class="start-carousel">
+        <!-- Owl Carousel-->
+        <div
+          class="owl-carousel owl-corporate-wide"
+          data-items="1"
+          data-sm-items="2"
+          data-md-items="3"
+          data-xl-items="4"
+          data-stage-padding="60"
+          data-sm-stage-padding="38"
+          data-margin="20"
+          data-slide-transition="linear"
+          data-smart-speed="4000"
+          data-autoplay-time-out="4000">
+          <div class="owl-corporate-item">
+            <img src="images/ccva-caldas-rainha-1.webp" alt="CCVA Caldas Rainha 1" width="440" height="300">
+          </div>
+          <div class="owl-corporate-item">
+            <img src="images/ccva-caldas-rainha-2.webp" alt="CCVA Caldas Rainha 2" width="440" height="300">
+          </div>
+          <div class="owl-corporate-item">
+            <img src="images/ccva-caldas-rainha-3.webp" alt="CCVA Caldas Rainha 3" width="440" height="300">
+          </div>
+          <div class="owl-corporate-item">
+            <img src="images/ccva-caldas-rainha-4.webp" alt="CCVA Caldas Rainha 4" width="440" height="300">
+          </div>
+        </div>
 
-    <!-- Botão de voltar ao topo -->
-    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+        <!-- Segundo Carrossel -->
+        <div
+          class="owl-carousel owl-corporate-wide wow fadeInUp"
+          data-items="1"
+          data-sm-items="2"
+          data-md-items="3"
+          data-xl-items="4"
+          data-stage-padding="80"
+          data-sm-stage-padding="38"
+          data-margin="20"
+          data-slide-transition="linear"
+          data-smart-speed="4500"
+          data-autoplay-time-out="4500"
+          data-center="true">
+          <div class="owl-corporate-item">
+            <img src="images/ccva-caldas-rainha-5.webp" alt="CCVA Caldas Rainha 5" width="440" height="300">
+          </div>
+          <div class="owl-corporate-item">
+            <img src="images/ccva-caldas-rainha-6.webp" alt="CCVA Caldas Rainha 6" width="440" height="300">
+          </div>
+          <div class="owl-corporate-item">
+            <img src="images/ccva-caldas-rainha-7.webp" alt="CCVA Caldas Rainha 7" width="440" height="300">
+          </div>
+          <div class="owl-corporate-item">
+            <img src="images/ccva-caldas-rainha-8.webp" alt="CCVA Caldas Rainha 8" width="440" height="300">
+          </div>
+        </div>
+      </section>
+    </section>
 
-    <!-- Preloader -->
-    <div id="preloader"></div>
+    <!-- Secção Depoimentos -->
+    <div class="container section-title text-start" data-aos="fade-up">
+      <h2>Depoimentos</h2>
+      <div>
+        <span>Caldas da Rainha</span>
+        <span class="description-title">CCVA</span>
+      </div>
+    </div>
 
-    <!-- Ficheiros JS de Fornecedores -->
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
-    <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <section id="testimonials" class="testimonials section dark-background">
+      <img src="assets/img/ccva-foto1 (2).webp" class="testimonials-bg" alt="CCVA Fundo Depoimentos">
 
-    <!-- Ficheiros JS Principais -->
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/core.min.js"></script>
-    <script src="assets/js/script.js"></script>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              }
+            }
+          </script>
+          <div class="swiper-wrapper">
 
-  </body>
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/pr-daniel.jpg" class="testimonial-img" alt="Pr. Daniel">
+                <h3>Daniel Freman</h3>
+                <h4>Pastor</h4>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Ser pastor da CCVA é uma honra e uma missão, guiando vidas ao propósito de Deus com amor e dedicação.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/pr-daniel.jpg" class="testimonial-img" alt="Pr. Daniel">
+                <h3>Daniel Freman</h3>
+                <h4>Pastor</h4>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Ser pastor da CCVA é uma honra e uma missão, guiando vidas ao propósito de Deus com amor e dedicação.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/pr-daniel.jpg" class="testimonial-img" alt="Pr. Daniel">
+                <h3>Daniel Freman</h3>
+                <h4>Pastor</h4>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Ser pastor da CCVA é uma honra e uma missão, guiando vidas ao propósito de Deus com amor e dedicação.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/pr-daniel.jpg" class="testimonial-img" alt="Pr. Daniel">
+                <h3>Daniel Freman</h3>
+                <h4>Pastor</h4>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Ser pastor da CCVA é uma honra e uma missão, guiando vidas ao propósito de Deus com amor e dedicação.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/pr-daniel.jpg" class="testimonial-img" alt="Pr. Daniel">
+                <h3>Daniel Freman</h3>
+                <h4>Pastor</h4>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Ser pastor da CCVA é uma honra e uma missão, guiando vidas ao propósito de Deus com amor e dedicação.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+    <!-- /Secção Depoimentos -->
+
+    <!-- Secção FAQ -->
+    <section id="faq" class="faq section light-background">
+      <div class="container-fluid">
+        <div class="row gy-4">
+
+          <div class="col-lg-7 d-flex flex-column justify-content-center order-2 order-lg-1">
+            <div class="content px-xl-5" data-aos="fade-up" data-aos-delay="100">
+              <h3>
+                <span>Perguntas </span><strong>Respostas</strong>
+              </h3>
+              <p>
+                Tens dúvidas sobre o Cristianismo? Aqui podes explorar respostas detalhadas
+                para as perguntas mais comuns sobre os ensinamentos, práticas e valores cristãos.
+                Descobre, de forma clara, o que Jesus Cristo significa e como Ele influencia e transforma vidas.
+              </p>
+            </div>
+
+            <div class="faq-container px-xl-5" data-aos="fade-up" data-aos-delay="200">
+              <div class="faq-item">
+                <i class="faq-icon bi bi-question-circle"></i>
+                <h3>Sabes o que significa "Messias"?</h3>
+                <div class="faq-content">
+                  <p>
+                    "Messias" vem do hebraico e significa "Ungido". No cristianismo,
+                    Jesus é considerado o Messias prometido para salvar a humanidade.
+                  </p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div>
+
+              <div class="faq-item">
+                <i class="faq-icon bi bi-question-circle"></i>
+                <h3>Sabes o que significa a palavra "Evangelho"?</h3>
+                <div class="faq-content">
+                  <p>
+                    "Evangelho" significa "boa notícia" ou "boa nova". Refere-se
+                    à mensagem de salvação e esperança trazida por Jesus Cristo.
+                  </p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div>
+
+              <div class="faq-item">
+                <i class="faq-icon bi bi-question-circle"></i>
+                <h3>Sabes que Jesus morreu por toda a humanidade?</h3>
+                <div class="faq-content">
+                  <p>
+                    A morte de Jesus foi um sacrifício perfeito para redimir os pecados e salvar
+                    toda a humanidade, algo que ninguém poderia fazer por si próprio.
+                  </p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5 order-1 order-lg-2">
+            <img
+              src="assets/img/faq.jpg"
+              class="img-fluid"
+              alt="Imagem FAQ"
+              data-aos="zoom-in"
+              data-aos-delay="100">
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- /Secção FAQ -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <img src="assets/img/VA (2).png" alt="Logo" style="height: 40px; margin-right: 10px;">
+          </a>
+          <p>
+            Na CCVA Vida Abundante, proclamamos <br>
+            a salvação em Jesus Cristo, o único <br>
+            que transforma vidas, renova famílias <br>
+            e oferece esperança a todos. <br>
+            Venha fazer parte desta família.
+          </p>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Links Úteis</h4>
+          <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="quem-somos.html">Quem Somos</a></li>
+            <li><a href="#custom-features">Donativos</a></li>
+            <li><a href="#">Política de Privacidade</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Ministérios</h4>
+          <ul>
+            <li><a href="ministério-mulheres.html">Mulheres</a></li>
+            <li><a href="ministério-homens.html">Homens</a></li>
+            <li><a href="ministério-adolecentes.html">Adolescentes</a></li>
+            <li><a href="ministério-crianças.html">Espaço Fixe</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12 footer-contact">
+          <h4 class="mb-3">Contacto</h4>
+          <address>
+            <p class="mb-2">Rua Sebastião de Lima 37A,</p>
+            <p class="mb-3">Caldas da Rainha, 2500-277</p>
+          </address>
+          <p class="mb-2">
+            <a
+              href="mailto:ccvacaldasdarainha@gmail.com"
+              style="display: flex; align-items: center; gap: 12px;">
+              <i class="fas fa-envelope"></i> ccvacaldasdarainha@gmail.com
+            </a>
+          </p>
+          <p class="mb-3">
+            <a
+              href="contacto.html"
+              target="_blank"
+              style="display: flex; align-items: center; gap: 12px;">
+              <i class="fas fa-map-marker-alt"></i> Localização
+            </a>
+          </p>
+        </div>
+
+        <div class="social-links d-flex gap-3 mt-4">
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-youtube"></i></a>
+          <a href="#"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>
+        © <span>Copyright</span>
+        <strong class="px-1 sitename">2025 CCVA Caldas da Rainha</strong>
+        <span>All Rights Reserved</span>
+      </p>
+      <div class="credits">
+        Designed by <a class="designed" href="#">EBM Tech &amp; Media</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botão de voltar ao topo -->
+  <a
+    href="#"
+    id="scroll-top"
+    class="scroll-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Ficheiros JS de Fornecedores -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Ficheiros JS Principais -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/core.min.js"></script>
+  <script src="assets/js/script.js"></script>
+
+</body>
 </html>
+
 
