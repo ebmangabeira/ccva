@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="PT">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCVA | Caldas da Rainha</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- Ícones -->
+    <link rel="icon" href="assets/img/favicon.png">
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+    <!-- Tipografias -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
+      rel="stylesheet"
+    >
+
+    <!-- Ficheiros CSS de Fornecedores -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/vendor/aos/aos.css">
+    <link rel="stylesheet" href="assets/vendor/glightbox/css/glightbox.min.css">
+    <link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Ficheiros CSS Principais -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+
+  <body class="index-page">
+    <!-- Banner de Cookies -->
+    <div class="cookie-banner" id="cookieBanner">
+      <div class="cookie-card">
+        <div class="cookie-header">
+          <i class="fas fa-cookie-bite"></i>
+          <span>Consentimento de Cookies</span>
+        </div>
+        <p class="cookie-text">
+          Este site utiliza cookies para melhorar a sua experiência. Saiba mais na nossa
+          <a href="#" id="cookiePolicyLink">Política de Cookies e Privacidade</a>.
+        </p>
+        <div class="cookie-buttons">
+          <button class="cookie-btn btn-accept" id="acceptCookies">Aceitar</button>
+          <button class="cookie-btn btn-decline" id="declineCookies">Recusar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal de Política de Cookies e Privacidade -->
+    <div class="modal" id="cookieModal" role="dialog" aria-hidden="true">
+      <div class="modal-content">
+        <button class="modal-close" id="closeModal" aria-label="Fechar">&times;</button>
+        <div class="modal-header">Política de Cookies e Privacidade</div>
+        <div class="modal-body">
+          <h6>O que são Cookies?</h6>
+          <p>
+            Os cookies são pequenos ficheiros que armazenam informações sobre a sua
+            navegação e permitem:
+          </p>
+          <ul>
+            <li>Melhorar a funcionalidade do site;</li>
+            <li>Oferecer conteúdos personalizados;</li>
+            <li>Armazenar preferências do utilizador;</li>
+            <li>Fornecer estatísticas para melhoria contínua.</li>
+          </ul>
+          <h6>Política de Privacidade</h6>
+          <p>
+            Valorizamos a sua privacidade e garantimos que os seus dados são tratados
+            de forma ética e segura. Para mais informações, consulte a nossa
+            <strong>Política de Privacidade</strong>.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- HEADER -->
+    <header id="header" class="header d-flex align-items-center fixed-top">
+      <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <img src="assets/img/VA2.png" alt="Logo CCVA" class="logo-img">
+          <h1 class="sitename ms-2">CCVA</h1>
+          <h5 class="h5-logo">Caldas da Rainha</h5>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html" class="active">Início</a></li>
+            <li><a href="quem-somos.html">Quem Somos</a></li>
+            <li class="dropdown">
+              <a href="#">
+                <span>CCVA Igrejas</span> <i class="bi bi-chevron-down toggle-dropdown"></i>
+              </a>
+              <ul>
+                <li><a href="https://www.ccvalisboa.org/">Lisboa</a></li>
+                <li><a href="https://www.ccvamoscavide.org/ccva/">Moscavide</a></li>
+                <li><a href="https://www.figueiraigreja.org/">Figueira da Foz</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#">
+                <span>Ministérios</span> <i class="bi bi-chevron-down toggle-dropdown"></i>
+              </a>
+              <ul>
+                <li><a href="ministério-mulheres.html">Mulheres</a></li>
+                <li><a href="ministério-homens.html">Homens</a></li>
+                <li><a href="ministério-adolecentes.html">Adolescentes</a></li>
+                <li><a href="ministério-crianças.html">Espaço Fixe</a></li>
+              </ul>
+            </li>
+            <li><a href="estudo-bíblico.html">Estudo Bíblico</a></li>
+            <li><a href="galeria.html">Galeria</a></li>
+            <li><a href="#">Donativos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+      </div>
+    </header>
+    <!-- FIM HEADER -->
+
+    <!-- MAIN -->
+    <main class="main">
+
+      <!-- Banner de Título da Página -->
+      <div class="page-title dark-background" data-aos="fade">
+        <div class="heading">
+          <div class="container">
+            <div class="row d-flex justify-content-center text-center">
+              <div class="col-lg-8">
+                <!-- Espaço reservado se necessário -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <nav class="breadcrumbs">
+          <div class="container">
+            <ol>
+              <li><a href="index.html">Início</a></li>
+              <li class="current">Donativos</li>
+            </ol>
+          </div>
+        </nav>
+      </div>
+
+      <!-- Seção Sobre o Ministério -->
+      <section class="about section" data-aos="fade-right" style="padding: 60px 0;">
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Donativos</h2>
+          <div>
+            <span>Contribua</span>
+            <span class="description-title">Com Generosidade</span>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row g-5">
+            <div class="col-md-6">
+              <img
+                src="images/saude-do-solo.webp"
+                alt="Ministério de Mulheres"
+                class="img-fluid shadow"
+              >
+            </div>
+            <div class="col-md-6">
+              <h3>Sua Generosidade Impacta Vidas</h3>
+              <p>
+                Nosso propósito é mobilizar e inspirar pessoas a fazer a diferença por meio de doações e iniciativas solidárias. 
+                Com base nos princípios cristãos, promovemos ações que transformam vidas e fortalecem a comunidade.
+              </p>
+              <ul>
+                <li>Campanhas de arrecadação de alimentos, roupas e itens essenciais</li>
+                <li>Distribuição de recursos para famílias em situação de vulnerabilidade</li>
+                <li>Parcerias com instituições para ampliar o alcance das doações</li>
+              </ul>
+              
+              <br>
+              <a href="contacto.html" class="btn-hover">Entre em Contacto</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Seção Donativos -->
+<section id="sec-donativos" class="custom-features-section section py-5">
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="container">
+        <div class="row gy-4">
+  
+          <!-- Cartão 1 - Transferência Bancária -->
+          <div class="col-lg-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="custom-feature-item">
+              <div class="custom-feature-item-header">
+                <i class="fas fa-university" style="color: #ffbb2c;"></i>
+                <h3>Transferência Bancária</h3>
+              </div>
+              <p class="custom-schedule">
+                Vida Abundante Figueira<br>
+                <strong>IBAN:</strong> PT50 0033 0000 4547 6525 7150 5
+              </p>
+              <p>
+                Pode fazer a sua doação diretamente para a nossa conta bancária.
+                Agradecemos o seu apoio!
+              </p>
+            </div>
+          </div>
+  
+          <!-- Cartão 2 - MB WAY -->
+          <div class="col-lg-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="custom-feature-item">
+              <div class="custom-feature-item-header">
+                <i class="fas fa-mobile-alt" style="color: #5578ff;"></i>
+                <h3>MB WAY</h3>
+              </div>
+              <p class="custom-schedule">
+                Número MB WAY: <strong>911 137 584</strong>
+              </p>
+              <p>
+                Contribua de forma simples e rápida através do MB WAY.
+                Obrigado pela sua generosidade!
+              </p>
+            </div>
+          </div>
+  
+          <!-- Cartão 3 - Descritivo -->
+          <div class="col-lg-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+            <div class="custom-feature-item">
+              <div class="custom-feature-item-header">
+                <i class="fas fa-hand-holding-heart" style="color: #e80368;"></i>
+                <h3>Descritivo</h3>
+              </div>
+              <p class="custom-schedule">
+                <strong>Referência:</strong> CALDAS DA RAINHA
+              </p>
+              <p>
+                Ao fazer o seu donativo, utilize esta referência para identificar a
+                finalidade da contribuição.
+              </p>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Fim Seção Donativos -->
+  
+
+    </main>
+    <!-- FIM MAIN -->
+
+    <!-- FOOTER -->
+    <footer id="footer" class="footer dark-background">
+        <div class="container footer-top">
+          <div class="row gy-4">
+            <div class="col-lg-4 col-md-6 footer-about">
+              <a href="index.html" class="logo d-flex align-items-center">
+                <img src="assets/img/VA (2).png" alt="Logo" style="height: 40px; margin-right: 10px;">
+              </a>
+              <p>
+                Na CCVA Vida Abundante, proclamamos<br>
+                a salvação em Jesus Cristo, o único<br>
+                que transforma vidas, renova famílias<br>
+                e oferece esperança a todos.<br>
+                Venha fazer parte desta família.
+              </p>
+            </div>
+  
+            <div class="col-lg-2 col-md-3 footer-links">
+              <h4>Links Úteis</h4>
+              <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="quem-somos.html">Quem Somos</a></li>
+                <li><a href="#">Donativos</a></li>
+                <li><a href="#">Política de Privacidade</a></li>
+              </ul>
+            </div>
+  
+            <div class="col-lg-2 col-md-3 footer-links">
+              <h4>Ministérios</h4>
+              <ul>
+                <li><a href="ministério-mulheres.html">Mulheres</a></li>
+                <li><a href="ministério-homens.html">Homens</a></li>
+                <li><a href="ministério-adolecentes.html">Adolescentes</a></li>
+                <li><a href="ministério-crianças.html">Espaço Fixe</a></li>
+              </ul>
+            </div>
+  
+            <div class="col-lg-4 col-md-12 footer-contact">
+              <h4 class="mb-3">Contacto</h4>
+              <address>
+                <p class="mb-2">Rua Sebastião de Lima 37A,</p>
+                <p class="mb-3">Caldas da Rainha, 2500-277</p>
+              </address>
+              <p class="mb-2">
+                <a
+                  href="mailto:ccvacaldasdarainha@gmail.com"
+                  style="display: flex; align-items: center; gap: 12px;"
+                >
+                  <i class="fas fa-envelope"></i> ccvacaldasdarainha@gmail.com
+                </a>
+              </p>
+              <p class="mb-3">
+                <a
+                  href="contacto.html"
+                  target="_blank"
+                  style="display: flex; align-items: center; gap: 12px;"
+                >
+                  <i class="fas fa-map-marker-alt"></i> Localização
+                </a>
+              </p>
+  
+              <div class="social-links d-flex gap-3 mt-4">
+                <a href="https://www.facebook.com/VidaAbundanteCaldasdaRainha/?locale=pt_PT"><i class="bi bi-facebook"></i></a>
+                <a href="https://www.instagram.com/ccva.caldasdarainha/"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.youtube.com/@ccvavidaabundante"><i class="bi bi-youtube"></i></a>
+                <a href="https://api.whatsapp.com/send?phone=351912061291" target="_blank">
+                  <i class="bi bi-whatsapp"></i>
+                </a>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="container copyright text-center mt-4">
+          <p>
+            © <span>Copyright</span>
+            <strong class="px-1 sitename">2025 CCVA Caldas da Rainha</strong>
+            <span>All Rights Reserved</span>
+          </p>
+          <div class="credits">
+            Designed by <a class="designed" href="#">EBM Tech &amp; Media</a>
+          </div>
+        </div>
+      </footer>
+    <!-- FIM FOOTER -->
+
+    <!-- Botão de voltar ao topo -->
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      aria-label="Voltar ao topo"
+    >
+      <i class="bi bi-arrow-up-short"></i>
+    </a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Ficheiros JS de Fornecedores -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Ficheiros JS Principais -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/core.min.js"></script>
+    <script src="assets/js/script.js"></script>
+
+    <!-- Inicializar AOS (Animações) -->
+  </body>
+</html>
